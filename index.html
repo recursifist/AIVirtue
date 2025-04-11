@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wall of Honor - AI Responsibility</title>
+    <base href="/">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <link rel="stylesheet" href="/index.css">
+    <script>
+      const isGHP = window.location.hostname.includes('github.io')
+      const repoName = 'thoughts'
+      if (isGHP) {
+          const baseTag = document.querySelector('base')
+          if (baseTag) {
+              baseTag.setAttribute('href', `/${repoName}/`)
+          }
+      }
+    </script>
+  </head>
+  <body>
+
+    <header class="navbar">
+      <div class="nav-container">
+        <h1 class="title">
+          WALL OF HONOR
+          <span class="tagline">AI Responsibility</span>
+        </h1>
+        
+        <nav class="nav-menu">
+          <a href="#" class="button button-clear">Info</a>
+          <a href="#" class="button button-clear" id="toggle-search">Search</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div id="search-container" class="hidden">
+        <input type="text" id="search" placeholder="Search..." />
+      </div>
+      <div class="scroll-wrapper">
+        <div class="scroll-text" id="names-container"></div>
+      </div>
+    </main>
+    
+    <script src="/main.js"></script>
+    
+  </body>
+</html>
