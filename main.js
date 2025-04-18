@@ -1,42 +1,52 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const namesContainer = document.getElementById('names-container');
-  const searchBox = document.getElementById('search');
-  const searchContainer = document.getElementById('search-container');
-  const toggleSearch = document.getElementById('toggle-search');
+import scene from "./scene.js"
 
-  let namesList = [];
+function onReady(fun) {
+  if (document.readyState === "complete" || document.readyState === "interactive") setTimeout(fun, 1)
+  else  document.addEventListener("DOMContentLoaded", fun)
+}
 
-  fetch('data.json')
-    .then(res => res.json())
-    .then(data => {
-      namesList = data;
-      renderNames(namesList);
-    });
+onReady(async () => {
+  await scene.create('scene-container', 'data.json', 'scene.glb')
 
-  function renderNames(names) {
-    namesContainer.innerHTML = names.map(name => `<div class="name-entry" id="${name.toLowerCase().replace(/\s+/g, '-')}">${name}</div>`).join('');
-  }
+  let searchState = false
+  let aboutState = false
+  const toggleSearch = document.getElementById("search-toggle")
+  const toggleAbout = document.getElementById("about-toggle")
+  const closeButton = document.getElementsByClassName("close-button")[0]
+  const searchBox = document.getElementById("searchbox")
+  const aboutBox = document.getElementById("aboutBox")
 
-  toggleSearch.addEventListener('click', (e) => {
-    e.preventDefault();
-    searchContainer.classList.toggle('hidden');
-  });
+  toggleSearch.addEventListener('click', () => {
+    searchState = !searchState
+    searchBox.classList.toggle("hidden", !searchState)
+    searchBox.focus()
+  })
 
-  searchBox.addEventListener('input', () => {
-    const searchVal = searchBox.value.toLowerCase();
-    if (!searchVal) return;
+  toggleAbout.addEventListener('click', () => {
+    aboutState = !aboutState
+    aboutBox.classList.toggle("hidden", !aboutState)
+    aboutBox.focus()
+  })
+  closeButton.addEventListener('click', () => toggleAbout.click())
 
-    const match = namesList.find(name => name.toLowerCase().includes(searchVal));
-    if (match) {
-      const targetId = match.toLowerCase().replace(/\s+/g, '-');
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        // Pause animation to scroll to target manually
-        namesContainer.style.animationPlayState = 'paused';
 
-        const offsetTop = targetElement.offsetTop;
-        namesContainer.style.transform = `rotateX(25deg) translateY(-${offsetTop - 100}px)`;
-      }
+  searchBox.addEventListener('keydown', (e) => { 
+    if (e.key === "Escape") {
+      toggleState = false
+      searchBox.value = ""
+      scene.search("")
+      searchBox.classList.add("hidden")
     }
-  });
-});
+  })
+  searchBox.addEventListener("input", function() { scene.search(this.value) })
+  searchBox.addEventListener('keydown', (e) => { if (e.key === "Enter") { scene.search(searchBox.value) } })
+  setTimeout(() => { 
+    const query = document.location.search
+    if(query?.length > 1) {
+      const q = query.slice(3)
+      searchBox.value = q
+      toggle.click()
+      scene.search(q)
+    }
+  }, 1000)
+})

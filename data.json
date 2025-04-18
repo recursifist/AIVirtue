@@ -1,13 +1,21 @@
-[
-  "Leia Organa",
-  "Luke Skywalker",
-  "Han Solo",
-  "Lando Calrissian",
-  "Yoda",
-  "Obi-Wan Kenobi",
-  "Anakin Skywalker",
-  "Padmé Amidala",
-  "Rey",
-  "Finn",
-  "Poe Dameron"
-]
+{
+  "data":
+    [
+      "Geoffrey Hinton",
+      "Yoshua Bengio",
+      "Stuart Russel",
+      "Roman Yampolskiy",
+      "Nick Bostrom",
+      "Max Tegmark",
+      "Eliezer Yudkowsky",
+      "Nate Soares",
+      "Paul Christiano",
+      "Steven Adler",
+      "William Saunders",
+      "Miles Brundage",
+      "Rosie Campbell",
+      "Gretchen Krueger",
+      "Cullen O'Keefe",
+      "Daniel Kokotajlo"
+    ]
+}

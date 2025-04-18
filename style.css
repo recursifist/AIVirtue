@@ -1,0 +1,171 @@
+:root {
+  --primary: #daa04faa;
+  --secondary: #daa04f;
+  --navbar: #1a2027;
+  --background: #14171C;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--background) !important;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+}
+
+.navbar {
+  background: var(--navbar);
+}
+
+.title, .button, .tagline {
+  color: var(--primary) !important;
+  margin: 0 !important;
+}
+
+.title {
+  font-size: 2.75rem;
+  font-weight: bold;
+  color: var(--secondary) !important;
+  white-space: nowrap;
+}
+
+.tagline {
+  font-size: 1.8rem;
+  margin-bottom: -8px !important;
+}
+
+.button {
+  padding: 0 1rem;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.nav-container {
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: .75rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 0.1rem;
+}
+
+#searchbox {
+  position: absolute;
+  bottom: 0.6rem;
+  left: 15%;
+  right: 15%;
+  width: 70%;
+  z-index: 50;
+}
+
+#searchbox,
+#searchbox:active,
+#searchbox:focus,
+#searchbox:hover {
+  color: #fff !important;
+  border-color: var(--secondary);
+  background: var(--background);
+  padding: 1rem;
+  font-size: 1.25rem;
+  box-shadow: #000 0px 0px 20px;
+}
+
+#aboutBox {
+  position: absolute;
+  top: 18%;
+  bottom: 18%;
+  left: 10%;
+  right: 10%;
+  height: 76%;
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+  z-index: 90;
+  color: #fff;
+  padding: 3rem;
+  background: var(--background);
+  overflow-y: scroll;
+  box-shadow: #000 0px 0px 20px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  z-index: 91;
+  line-height: 1;
+  background: transparent;
+  border: none;
+}
+
+.hidden {
+  display: none;
+}
+
+main {
+  height: calc(100% - 62px);
+  width: 100%;
+}
+
+#scene-container {
+  height: 100%;
+  width: 100%;
+}
+
+#description {
+  text-align: center;
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  border-width: 0;
+  background-color: #15181b;
+  color: var(--secondary);
+}
+#description span {
+  font-size: 2.5rem !important;
+}
+
+textarea {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  main.container {
+    flex-direction: column;
+  }
+
+  #textlist {
+    width: 100%;
+    height: 200px;
+  }
+
+  #main {
+    height: calc(100% - 200px);
+  }
+
+  #searchbox {
+    left: 1%;
+    right: 1%;
+    width: 98%;
+  }
+
+  #description {
+    font-size: 2rem;
+  }
+}

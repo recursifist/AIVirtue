@@ -1,40 +1,72 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wall of Honor - AI Responsibility</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
-    <link rel="stylesheet" href="/WallOfHonor/index.css">
-  </head>
-  <body>
+<html lang="en">
 
-    <header class="navbar">
-      <div class="nav-container">
-        <h1 class="title">
-          WALL OF HONOR
-          <span class="tagline">AI Responsibility</span>
-        </h1>
-        
-        <nav class="nav-menu">
-          <a href="#" class="button button-clear">Info</a>
-          <a href="#" class="button button-clear" id="toggle-search">Search</a>
-        </nav>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wall of Honor - AI Virtue</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+  <link rel="stylesheet" href="style.css">
 
-    <main class="container">
-      <div id="search-container" class="hidden">
-        <input type="text" id="search" placeholder="Search..." />
-      </div>
-      <div class="scroll-wrapper">
-        <div class="scroll-text" id="names-container"></div>
-      </div>
-    </main>
-    
-    <script src="/WallOfHonor/main.js"></script>
-    
-  </body>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"
+      }
+    }
+    </script>
+  <script type="module" src="main.js"></script>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="nav-container">
+      <h1 class="title">
+        <div class="tagline">AI Virtue</div>
+        WALL OF HONOR
+      </h1>
+      <nav class="nav-menu">
+        <a href="#" class="button button-clear" id="search-toggle">Search</a>
+        <a href="#" class="button button-clear" id="about-toggle">About</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <input type="text" id="searchbox" class="hidden" placeholder="Search..." />
+    <div id="description">
+      <h2>
+        <span class="nowrap">Honoring AI Professionals</span> <span class="nowrap">Who Put AI Safety First.</span>
+      </h2>
+    </div>
+    <div id="aboutBox" class="hidden">
+      <span class="close-button">&times;</span>
+      <h5><strong>AI Virtue:</strong></h5>
+      <p>Taking a strong stance against critical AI Risk while seeking to reduce it.</p>
+      <h5><strong>Selection Criteria:</strong></h5>
+      Selected individuals are subject to re-evaluation at any time.
+      <ul>
+        <li>Prominent AI researchers who abstain from frontier AI work despite their expertise.</li>
+        <li>AI safety whistleblowers from frontier AI labs who eschewed similar
+          organizations.</li>
+        <li>Ex-employees of frontier AI labs who prioritized safety in
+        resigning, or fired for it, and eschewed similar
+          organizations.</li>
+        <li>They do not contribute to capabilites research or safety work to the support of increasing capabilities.</li>
+      </ul>
+      <br>
+      <h5><strong>Submissions & Objections:</strong></h5>
+      <form method="POST" action="mailto:AIVirtueWallOfHonor@gmx.com" enctype="text/plain">
+        <fieldset>
+          <textarea id="msg" name="msg" placeholder="..." rows="3" required></textarea>
+          <input class="button-primary" type="submit" value="Submit">
+        </fieldset>
+      </form>
+    </div>
+    <div id="scene-container"></div>
+  </main>
+</body>
+
 </html>
