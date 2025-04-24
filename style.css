@@ -33,7 +33,7 @@ html, body {
 
 .tagline {
   font-size: 1.8rem;
-  margin-bottom: -8px !important;
+  margin-bottom: -6px !important;
 }
 
 .button {
@@ -59,7 +59,7 @@ html, body {
   gap: 0.1rem;
 }
 
-#searchbox {
+#search-container {
   position: absolute;
   bottom: 0.6rem;
   left: 15%;
@@ -72,12 +72,31 @@ html, body {
 #searchbox:active,
 #searchbox:focus,
 #searchbox:hover {
+  width: 100%;
+  padding: 1rem;
+  padding-right: 30px;
+  box-sizing: border-box;
+  font-size: 1.25rem;
   color: #fff !important;
   border-color: var(--secondary);
   background: var(--background);
-  padding: 1rem;
-  font-size: 1.25rem;
   box-shadow: #000 0px 0px 20px;
+  outline: none;
+}
+
+#search-container .close-button {
+  position: absolute;
+  right: 0px;
+  padding: 0 9px;
+  color: #aaa;
+  font-size: x-large;
+  cursor: pointer;
+  user-select: none;
+  z-index: 51;
+}
+
+#search-container .close-button:hover {
+  color: #888;
 }
 
 #aboutBox {
@@ -98,10 +117,11 @@ html, body {
   box-shadow: #000 0px 0px 20px;
 }
 
-.close-button {
+#aboutBox .close-button {
   position: absolute;
   top: 10px;
   right: 15px;
+  padding: 6px;
   font-size: 3rem;
   font-weight: bold;
   color: #fff;
@@ -110,6 +130,10 @@ html, body {
   line-height: 1;
   background: transparent;
   border: none;
+  user-select: none;
+}
+#aboutBox .close-button:hover {
+  color: #aaa;
 }
 
 .hidden {
@@ -150,6 +174,10 @@ textarea {
     flex-direction: column;
   }
 
+  .title {
+    font-size: 2rem;
+  }
+
   #textlist {
     width: 100%;
     height: 200px;
@@ -159,13 +187,11 @@ textarea {
     height: calc(100% - 200px);
   }
 
-  #searchbox {
-    left: 1%;
-    right: 1%;
-    width: 98%;
-  }
-
   #description {
     font-size: 2rem;
+  }
+
+  .button {
+    padding: 0 0.3rem;
   }
 }

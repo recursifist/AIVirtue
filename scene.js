@@ -44,7 +44,6 @@ const createLighting = () => {
   return lights
 }
 
-
 const createParticles = () => {
   const particleCount = 20
   const particlesGeometry = new THREE.BufferGeometry()
@@ -53,7 +52,7 @@ const createParticles = () => {
 
   for (let i = 0; i < particleCount; i++) {
     const x = -1.5 + Math.random() * 3
-    const z = -.4
+    const z = -.4 + Math.random() * 1.2
     const y = 2 * Math.random()
 
     positions[i * 3 + 0] = x
@@ -86,7 +85,7 @@ const createParticles = () => {
   return particles
 }
 
-const updateParticles = (particles) => {
+const updateParticles = (particles, delta) => {
   const positions = particles.geometry.attributes.position.array
   const { velocities, particleCount } = particles.userData
 
@@ -122,9 +121,8 @@ const createModelLoader = () => {
   return loader
 }
 
-const loadModel = (gltf, mixer) => {
+const loadModel = (gltf) => {
   const model = gltf.scene
-  mixer = new THREE.AnimationMixer(model)
 
   model.traverse((node) => {
     if (node.isMesh) {
@@ -133,11 +131,7 @@ const loadModel = (gltf, mixer) => {
     }
   })
 
-  gltf.animations.forEach((clip) => {
-    mixer.clipAction(clip).play()
-  })
-
-  return { model, mixer }
+  return { model }
 }
 
 const loadNames = async (jsonFileName) => {
@@ -183,7 +177,7 @@ const createText = (names, textGroup, textItems) => { // hack: ugly non-async pa
 }
 
 let scrollDirection = 1
-let scrollSpeed = 0.3
+let scrollSpeed = 0.1
 const updateScrolling = (textItems, delta) => {
   textItems.forEach((item) => {
     item.mesh.position.y += scrollSpeed * delta * scrollDirection
@@ -219,21 +213,19 @@ const searchText = query => {
   const split = name => name.toLowerCase().split(/\s+/)
 
   const matches = []
-  if (q.length > 2) {
-    scrollDirection = 1
-    resetTextSpacing(-1)
-    textSpeedBoost(0.25, 1000)
+  scrollDirection = 1
+  resetTextSpacing(-1)
+  textSpeedBoost(0.25, 1000)
 
-    matches.push(..._textItems.filter(item => split(item.name)[0].startsWith(q)))
-    matches.push(..._textItems.filter(item => {
-      const parts = split(item.name)
-      return parts[parts.length - 1].startsWith(q)
-    }))
-    matches.push(..._textItems.filter(item => {
-      const parts = split(item.name)
-      return parts.length > 2 && parts.slice(1, -1).some(p => p.startsWith(q))
-    }))
-  }
+  matches.push(..._textItems.filter(item => split(item.name)[0].startsWith(q)))
+  matches.push(..._textItems.filter(item => {
+    const parts = split(item.name)
+    return parts[parts.length - 1].startsWith(q)
+  }))
+  matches.push(..._textItems.filter(item => {
+    const parts = split(item.name)
+    return parts.length > 2 && parts.slice(1, -1).some(p => p.startsWith(q))
+  }))
 
   if (matches.length === 0) {
     textItems = [..._textItems]
@@ -247,12 +239,11 @@ const searchText = query => {
   resetTextSpacing(1)
 }
 
-const setupAnimations = (renderer, scene, camera, mixer, updates) => {
+const setupAnimations = (renderer, scene, camera, updates) => {
   const clock = new THREE.Clock()
 
   renderer.setAnimationLoop(() => {
-    const delta = Math.min(clock.getDelta(), 0.1)
-    if (mixer) mixer.update(delta)
+    const delta = Math.min(clock.getDelta(), 0.04)
 
     updates(delta)
 
@@ -324,7 +315,7 @@ const createScene = async (htmlContainerId, jsonFileName, modelFileName) => {
 
   loader.load(modelFileName, async (gltf) => {
     const { container, renderer, scene, camera } = initScene(htmlContainerId)
-    const { model, mixer } = loadModel(gltf)
+    const { model } = loadModel(gltf)
     const lights = createLighting()
     const textGroup = new THREE.Group()
     const particles = createParticles()
@@ -337,10 +328,10 @@ const createScene = async (htmlContainerId, jsonFileName, modelFileName) => {
     createText(names, textGroup, textItems)
 
     const updates = (delta) => {
-      updateParticles(particles)
+      updateParticles(particles, delta)
       if (textItems.length > 0) updateScrolling(textItems, delta)
     }
-    setupAnimations(renderer, scene, camera, mixer, updates)
+    setupAnimations(renderer, scene, camera, updates)
 
     updateScrollDirection(container)
     updateOnWindowResize(container, camera, renderer)

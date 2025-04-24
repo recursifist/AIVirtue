@@ -12,35 +12,36 @@ onReady(async () => {
   let aboutState = false
   const toggleSearch = document.getElementById("search-toggle")
   const toggleAbout = document.getElementById("about-toggle")
-  const closeButton = document.getElementsByClassName("close-button")[0]
+  const searchContainer = document.getElementById("search-container")
   const searchBox = document.getElementById("searchbox")
+  const searchCloseButton = searchContainer.getElementsByClassName("close-button")[0]
   const aboutBox = document.getElementById("aboutBox")
+  const aboutCloseButton = aboutBox.getElementsByClassName("close-button")[0]
 
   toggleSearch.addEventListener('click', () => {
     searchState = !searchState
-    searchBox.classList.toggle("hidden", !searchState)
-    searchBox.focus()
+    searchContainer.classList.toggle("hidden", !searchState)
+    searchContainer.focus()
   })
+  const clearSearch = () => {
+    searchBox.value = ""
+    scene.search("")
+    toggleSearch.click()
+  }
+  searchCloseButton.addEventListener('click', () => clearSearch())
+  searchBox.addEventListener('keydown', (e) => { if (e.key === "Escape") clearSearch()})
+  searchBox.addEventListener("input", function() { scene.search(this.value) })
+  searchBox.addEventListener('keydown', (e) => { if (e.key === "Enter") { scene.search(searchBox.value) } })
 
   toggleAbout.addEventListener('click', () => {
     aboutState = !aboutState
     aboutBox.classList.toggle("hidden", !aboutState)
     aboutBox.focus()
   })
-  closeButton.addEventListener('click', () => toggleAbout.click())
+  aboutCloseButton.addEventListener('click', () => toggleAbout.click())
+  aboutBox.addEventListener('keydown', (e) => { if (e.key === "Escape") toggleAbout.click()})
 
-
-  searchBox.addEventListener('keydown', (e) => { 
-    if (e.key === "Escape") {
-      toggleState = false
-      searchBox.value = ""
-      scene.search("")
-      searchBox.classList.add("hidden")
-    }
-  })
-  searchBox.addEventListener("input", function() { scene.search(this.value) })
-  searchBox.addEventListener('keydown', (e) => { if (e.key === "Enter") { scene.search(searchBox.value) } })
-  setTimeout(() => { 
+  const searchFromUrl = () => setTimeout(() => { 
     const query = document.location.search
     if(query?.length > 1) {
       const q = query.slice(3)
@@ -49,4 +50,5 @@ onReady(async () => {
       scene.search(q)
     }
   }, 1000)
+  searchFromUrl()
 })
