@@ -21,7 +21,7 @@ onReady(async () => {
   toggleSearch.addEventListener('click', () => {
     searchState = !searchState
     searchContainer.classList.toggle("hidden", !searchState)
-    searchContainer.focus()
+    searchBox.focus()
   })
   const clearSearch = () => {
     searchBox.value = ""
