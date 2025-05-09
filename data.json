@@ -1,22 +1,101 @@
 {
-  "data":
-    [
-      "Geoffrey Hinton",
-      "Yoshua Bengio",
-      "Stuart Russel",
-      "Roman Yampolskiy",
-      "Nick Bostrom",
-      "Max Tegmark",
-      "Eliezer Yudkowsky",
-      "Nate Soares",
-      "Paul Christiano",
-      "Richard Ngo",
-      "Steven Adler",
-      "William Saunders",
-      "Miles Brundage",
-      "Rosie Campbell",
-      "Gretchen Krueger",
-      "Cullen O'Keefe",
-      "Daniel Kokotajlo"
-    ]
+  "$schema": "schema.json",
+  "data": [
+    {
+      "name": "Geoffrey Hinton",
+      "link": "https://www.cs.toronto.edu/~hinton/",
+      "tagline": "University of Toronto - Godfather of AI",
+      "rationale": "After decades of pioneering neural network research, Hinton resigned from Google in 2023 to speak freely about AI risks, warning that advanced AI could surpass human intelligence and potentially pose existential threats."
+    },
+    {
+      "name": "Yoshua Bengio",
+      "link": "https://yoshuabengio.org/",
+      "tagline": "MILA - Pioneer of Deep Learning",
+      "rationale": "While continuing fundamental AI research at MILA, Bengio has shifted focus toward AI safety and governance, advocating for careful development and regulation of powerful AI systems to prevent potential harms."
+    },
+    {
+      "name": "Stuart Russell",
+      "tagline": "UC Berkeley - AI Safety Pioneer",
+      "link": "https://people.eecs.berkeley.edu/~russell/",
+      "rationale": "As a leading AI researcher at Berkeley, Russell has dedicated significant efforts to highlighting AI alignment problems, authoring 'Human Compatible' and advocating for development approaches that prioritize safety over capabilities."
+    },
+    {
+      "name": "Roman Yampolskiy",
+      "link": "https://engineering.louisville.edu/faculty/roman-v-yampolskiy/",
+      "tagline": "University of Louisville - AI Safety Pioneer",
+      "rationale": "Specializing in AI safety, Yampolskiy consistently warns about existential risks from advanced AI and argues that uncontrolled AI development could lead to catastrophic outcomes, advocating for pauses in frontier AI research."
+    },
+    {
+      "name": "Nick Bostrom",
+      "link": "https://www.nickbostrom.com/",
+      "tagline": "FHI Oxford - AI Safety Pioneer",
+      "rationale": "As founder of Oxford's Future of Humanity Institute, Bostrom has been instrumental in bringing attention to AI existential risks through his book 'Superintelligence' and advocates for careful AI governance."
+    },
+    {
+      "name": "Max Tegmark",
+      "link": "https://space.mit.edu/home/tegmark/",
+      "tagline": "MIT - Future of Life Institute",
+      "rationale": "MIT physicist and co-founder of the Future of Life Institute, Tegmark actively campaigns for AI safety measures and responsible development, having organized open letters calling for caution in AI advancement."
+    },
+    {
+      "name": "Eliezer Yudkowsky",
+      "link": "https://www.yudkowsky.net/",
+      "tagline": "MIRI - Pioneer of AI Alignment Theory",
+      "rationale": "Founder of MIRI, Yudkowsky has consistently warned about AI alignment problems and existential risks, advocating for complete moratoriums on advanced AI development until robust safety measures are established."
+    },
+    {
+      "name": "Nate Soares",
+      "link": "https://intelligence.org/team/",
+      "tagline": "MIRI - Alignment Researcher",
+      "rationale": "As executive director of MIRI, Soares focuses exclusively on addressing AI alignment problems and potential catastrophic risks from advanced AI rather than contributing to capability advancements."
+    },
+    {
+      "name": "Paul Christiano",
+      "link": "https://paulfchristiano.com/",
+      "tagline": "Ex-OpenAI Researcher - ARC",
+      "rationale": "Founded the Alignment Research Center after leaving OpenAI, focusing exclusively on AI alignment problems while abstaining from capabilities research that could accelerate AI development."
+    },
+    {
+      "name": "Steven Adler",
+      "link": "https://scholar.google.com/citations?user=K8mpmWAAAAAJ",
+      "tagline": "Ex-OpenAI - AI Safety Whistleblower",
+      "rationale": "Ex-OpenAI engineer who resigned over AI safety concerns, specifically citing his unwillingness to contribute to systems that might lead to unaligned artificial general intelligence."
+    },
+    {
+      "name": "William Saunders",
+      "link": "https://scholar.google.com/citations?user=8hjFFAoAAAAJ",
+      "tagline": "Ex-OpenAI Safety Researcher - ARC",
+      "rationale": "Left OpenAI to join the Alignment Research Center, expressing concerns about the pace of AI development and choosing to focus exclusively on alignment research rather than capabilities advancement."
+    },
+    {
+      "name": "Miles Brundage",
+      "link": "https://www.milesbrundage.com/",
+      "tagline": "AI Governance Expert - Responsible AI Advocate",
+      "rationale": "Prominent AI policy researcher who has consistently advocated for responsible AI development and governance while warning about safety risks from advanced systems."
+    },
+    {
+      "name": "Rosie Campbell",
+      "link": "https://www.rosiecampbell.xyz/about",
+      "tagline": "Ex-OpenAI & Anthropic",
+      "rationale": "Left OpenAI to co-found the Anthropic safety team before moving to the Partnership on AI, consistently focusing her career on AI safety and governance rather than capabilities advancement."
+    },
+    {
+      "name": "Gretchen Krueger",
+      "link": "https://scholar.google.com/citations?user=astFxkwAAAAJ",
+      "tagline": "Ex-OpenAI Researcher - AI Safety Advocate",
+      "rationale": "Ex-researcher at OpenAI who shifted focus to AI safety and has spoken publicly about the importance of careful development of increasingly powerful AI systems."
+    },
+    {
+      "name": "Cullen O'Keefe",
+      "link": "https://www.cullenokeefe.com/",
+      "tagline": "Ex-OpenAI Legal Counsel - AI Governance Expert",
+      "rationale": "Ex-legal counsel at OpenAI who left to focus on AI governance and safety through EA organizations, advocating for legal frameworks to mitigate AI risks rather than accelerating capabilities."
+    },
+    {
+      "name": "Daniel Kokotajlo",
+      "link": "https://www.alignmentforum.org/users/daniel-kokotajlo",
+      "tagline": "Ex-OpenAI - Safety-Focused Researcher",
+      "rationale": "Ex-OpenAI safety researcher who has consistently focused on existential risks from advanced AI, particularly timelines and forecasting risks, while avoiding work that could accelerate AI capability development."
+    }
+  ]
 }

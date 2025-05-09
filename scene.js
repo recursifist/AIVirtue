@@ -3,6 +3,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js'
 import { FontLoader } from 'three/addons/loaders/FontLoader.js'
 import { TextGeometry } from 'three/addons/geometries/TextGeometry.js'
+import utils from "./utils.min.js"
 
 THREE.Cache.enabled = true
 
@@ -17,7 +18,7 @@ const createLighting = () => {
   const lights = []
   const catchlight = new THREE.SpotLight(0xffffff, 1.5)
   catchlight.position.set(0, 2.65, -1.1)
-  catchlight.angle = Math.PI 
+  catchlight.angle = Math.PI
   catchlight.castShadow = true
   lights.push(catchlight)
 
@@ -121,7 +122,7 @@ const createModelLoader = () => {
   return loader
 }
 
-const loadModel = (gltf) => {
+const initModel = (gltf) => {
   const model = gltf.scene
 
   model.traverse((node) => {
@@ -134,21 +135,19 @@ const loadModel = (gltf) => {
   return { model }
 }
 
-const loadNames = async (jsonFileName) => {
-  const response = await fetch(jsonFileName)
-  const jsonData = await response.json()
-  return jsonData.data
-}
-
+let selectedDetails = undefined
 let textItems = []
 let _textItems = []
 const textSpacing = 0.4
-const createText = (names, textGroup, textItems) => { // hack: ugly non-async pattern
+const createText = (data, textGroup, textItems) => { // hack: ugly non-async pattern
   const fontLoader = new FontLoader()
   fontLoader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json',
     font => {
-      names.forEach((name, i) => {
-        const geometry = new TextGeometry(name, {
+      data.forEach((x, i) => {
+        const itemGroup = new THREE.Group()
+        itemGroup.record =  { name: x.name, text: x.rationale, link: x.link }
+
+        const nameGeometry = new TextGeometry(x.name, {
           font: font,
           size: 0.07,
           depth: 0.016,
@@ -161,17 +160,52 @@ const createText = (names, textGroup, textItems) => { // hack: ugly non-async pa
           roughness: 0.5,
         })
 
-        const mesh = new THREE.Mesh(geometry, material)
-        geometry.computeBoundingBox()
+        const nameMesh = new THREE.Mesh(nameGeometry, material)
+        nameGeometry.computeBoundingBox()
+        nameMesh.position.x = -nameGeometry.boundingBox.max.x / 2
+        nameMesh.position.z = 0.27
+        itemGroup.nameMesh = nameMesh
+        itemGroup.add(nameMesh)
 
-        mesh.position.y = i * textSpacing
-        mesh.position.x = -geometry.boundingBox.max.x / 2
-        mesh.position.z = 0.27
+        const taglineGeometry = new TextGeometry(x.tagline, {
+          font: font,
+          size: 0.04,
+          depth: 0.016,
+          curveSegments: 9,
+        })
 
-        textGroup.add(mesh)
+        const taglineMesh = new THREE.Mesh(taglineGeometry, material)
+        taglineGeometry.computeBoundingBox();
+        taglineMesh.position.x = -taglineGeometry.boundingBox.max.x / 2
+        taglineMesh.position.y = -0.1
+        taglineMesh.position.z = 0.27
+        itemGroup.add(taglineMesh)
+
+        const nameBox = nameGeometry.boundingBox
+        const taglineBox = taglineGeometry.boundingBox
+        const width = Math.max(nameBox.max.x - nameBox.min.x, taglineBox.max.x - taglineBox.min.x)
+        const height = Math.abs(taglineMesh.position.y) + (nameBox.max.y - nameBox.min.y) + (taglineBox.max.y - taglineBox.min.y)
+
+        const planeGeometry = new THREE.PlaneGeometry(width + 0.1, height + 0.1);
+        const planeMaterial = new THREE.MeshBasicMaterial({
+          color: 0xffffff,
+          transparent: true,
+          opacity: 0.0,
+          side: THREE.FrontSide
+        })
+
+        const hitPlane = new THREE.Mesh(planeGeometry, planeMaterial)
+        hitPlane.position.z = 0.26
+        hitPlane.position.y = -height / 5
+        itemGroup.add(hitPlane)
+
+        itemGroup.position.y = i * textSpacing
+
+        textGroup.add(itemGroup)
         textGroup.rotation.y = Math.PI
-        textItems.push({ mesh, name })
-        _textItems.push({ mesh, name })
+
+        textItems.push({ mesh: itemGroup, name: x.name })
+        _textItems.push({ mesh: itemGroup, name: x.name })
       })
     })
 }
@@ -203,7 +237,7 @@ const textSpeedBoost = (factor, timeout) => {
 }
 
 const resetTextSpacing = (targetY) => {
-  textItems.forEach((item , i) => {
+  textItems.forEach((item, i) => {
     item.mesh.position.y = targetY - (textSpacing * i)
   })
 }
@@ -315,7 +349,7 @@ const createScene = async (htmlContainerId, jsonFileName, modelFileName) => {
 
   loader.load(modelFileName, async (gltf) => {
     const { container, renderer, scene, camera } = initScene(htmlContainerId)
-    const { model } = loadModel(gltf)
+    const { model } = initModel(gltf)
     const lights = createLighting()
     const textGroup = new THREE.Group()
     const particles = createParticles()
@@ -324,10 +358,11 @@ const createScene = async (htmlContainerId, jsonFileName, modelFileName) => {
       scene.add(item)
     }
 
-    const names = await loadNames(jsonFileName)
-    createText(names, textGroup, textItems)
+    const data = await utils.loadJSON(jsonFileName)
+    createText(data, textGroup, textItems)
 
     const updates = (delta) => {
+      utils.checkIntersection(camera, textGroup)
       updateParticles(particles, delta)
       if (textItems.length > 0) updateScrolling(textItems, delta)
     }
@@ -335,11 +370,14 @@ const createScene = async (htmlContainerId, jsonFileName, modelFileName) => {
 
     updateScrollDirection(container)
     updateOnWindowResize(container, camera, renderer)
+    function setSelectedDetails(x) { selectedDetails = x }
+    utils.setupMouseEvents(camera, textGroup, setSelectedDetails)
   })
 }
 
 export default {
   create: createScene,
   search: searchText,
+  getSelected: () => { return selectedDetails }
 }
 

@@ -1,0 +1,17 @@
+{
+  "name": "woh",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "minify:js": "terser main.js > main.min.js && terser scene.js > scene.min.js && terser utils.js > utils.min.js",
+    "minify:css": "minify ./style.css > ./style.min.css",
+    "minify": "npm run minify:js && npm run minify:css"
+  },
+  "dependencies": {
+    "terser": "^5.39.0"
+  }
+}

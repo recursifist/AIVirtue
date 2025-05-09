@@ -5,7 +5,8 @@
   --background: #14171C;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -19,7 +20,9 @@ html, body {
   background: var(--navbar);
 }
 
-.title, .button, .tagline {
+.title,
+.button,
+.tagline {
   color: var(--primary) !important;
   margin: 0 !important;
 }
@@ -80,7 +83,7 @@ html, body {
   color: #fff !important;
   border-color: var(--secondary);
   background: var(--background);
-  box-shadow: #000 0px 0px 20px;
+  box-shadow: #000 0px 0px 15px;
   outline: none;
 }
 
@@ -113,11 +116,11 @@ html, body {
   color: #fff;
   padding: 3rem;
   background: var(--background);
-  overflow-y: scroll;
+  overflow-y: auto;
   box-shadow: #000 0px 0px 20px;
 }
 
-#aboutBox .close-button {
+.close-button {
   position: absolute;
   top: 10px;
   right: 15px;
@@ -132,7 +135,8 @@ html, body {
   border: none;
   user-select: none;
 }
-#aboutBox .close-button:hover {
+
+.close-button:hover {
   color: #aaa;
 }
 
@@ -156,17 +160,45 @@ main {
   bottom: 1px;
   left: 0;
   right: 0;
-  padding: 2rem;
+  padding: 3rem 20%;
   border-width: 0;
   background-color: #15181b;
+  box-shadow: #000 0px 0px 10px;
+}
+
+#description * {
   color: var(--secondary);
+}
+
+#description p {
+  font-size: 2rem !important;
 }
 #description span {
   font-size: 2.5rem !important;
 }
 
+#description .close-button {
+  color: #fff !important;
+  pointer-events: none;
+  margin-top: -3.5rem;
+  font-size: 1.25rem !important;
+  font-weight: normal;
+  text-shadow: #000 0px 0px 6px;
+}
+
 textarea {
   color: #fff;
+}
+
+a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  font-size: smaller;
+  color: var(--primary) !important;
+}
+
+a:hover {
+  opacity: 0.75;
 }
 
 @media (max-width: 768px) {
@@ -188,7 +220,15 @@ textarea {
   }
 
   #description {
-    font-size: 2rem;
+    padding: 1.5rem;
+  }
+
+  #description p {
+    font-size: 1.5rem !important;
+  }
+
+  #description span {
+    font-size: 2rem !important;
   }
 
   .button {
