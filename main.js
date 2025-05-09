@@ -22,15 +22,14 @@ onReady(async () => {
   const sceneContainer = document.getElementById("scene-container")
   const descriptionContainer = document.getElementById("description")
   const descriptionHtml = descriptionContainer.innerHTML
-  const submitButton = document.querySelector("form button")
+  const submitButton = document.querySelector("#aboutBox form input[type='button']")
 
-  submitButton.addEventListener('click', (e) => {
+  submitButton?.addEventListener('click', (e) => {
     e.preventDefault()
-    const form = document.querySelector("form")
-    const q = "prf1{pjCurqrKiRoodZhxwulYLD"
-    form.action = x(q)
-    form.submit()
-
+    const aboutForm = document.querySelector("#aboutBox form")
+    const q = x("prf1{pjCurqrKiRoodZhxwulYLD")
+    aboutForm.setAttribute("action", "mailto:"+q)
+    aboutForm.submit()
   })
 
   toggleSearch.addEventListener('click', () => {
