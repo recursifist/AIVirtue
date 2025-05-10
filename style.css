@@ -10,10 +10,11 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background: var(--background) !important;
+  background: #000 !important;
   color: white;
   font-family: 'Quicksand', sans-serif;
   font-weight: 500;
+  user-select: none;
 }
 
 .navbar {
@@ -144,6 +145,24 @@ body {
   display: none;
 }
 
+.invisible {
+  opacity: 0;
+}
+
+.fadeIn {
+  animation: fadeInK 1.5s;
+}
+
+@keyframes fadeInK {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 main {
   height: calc(100% - 62px);
   width: 100%;
@@ -154,29 +173,43 @@ main {
   width: 100%;
 }
 
+
+#loading-container {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 40vh;
+  color: var(--secondary);
+  background-color: #000;
+  z-index: 1;
+}
+
 #description {
   text-align: center;
   position: absolute;
   bottom: 1px;
   left: 0;
   right: 0;
-  padding: 3rem 20%;
+  padding: 2.5rem 20%;
   border-width: 0;
   background-color: #15181b;
   box-shadow: #000 0px 0px 10px;
+  z-index: 2;
 }
-
 #description * {
   color: var(--secondary);
 }
-
 #description p {
   font-size: 2rem !important;
+  margin: 0;
 }
 #description span {
   font-size: 2.5rem !important;
 }
-
+#description  h2 {
+  margin: 0;
+  padding: 0;
+}
 #description .close-button {
   color: #fff !important;
   pointer-events: none;
@@ -189,6 +222,7 @@ main {
 textarea {
   color: #fff;
 }
+
 
 a {
   text-decoration: underline;

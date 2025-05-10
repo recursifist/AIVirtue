@@ -20,16 +20,17 @@ const createLighting = () => {
   catchlight.position.set(0, 2.65, -1.1)
   catchlight.angle = Math.PI
   catchlight.castShadow = true
-  lights.push(catchlight)
+  //lights.push(catchlight)
 
   const spotlight = new THREE.SpotLight(0xffffff, 1)
   spotlight.position.set(0, 2.6, -1)
   spotlight.angle = Math.PI / 8.6
   spotlight.castShadow = true
-  lights.push(spotlight)
+  //lights.push(spotlight)
 
   const fillLightR = new THREE.DirectionalLight(0xffffff, 1)
   fillLightR.position.set(-4, 1, -2)
+  fillLightR.castShadow = true
   lights.push(fillLightR)
 
   const fillLightL = new THREE.DirectionalLight(0xffffff, 0.6)
@@ -40,7 +41,7 @@ const createLighting = () => {
   const backLight = new THREE.PointLight(0xffffff, 3.6)
   backLight.position.set(0, 1, 1.5)
   backLight.castShadow = true
-  lights.push(backLight)
+  //lights.push(backLight)
 
   return lights
 }
@@ -81,7 +82,7 @@ const createParticles = () => {
   })
 
   const particles = new THREE.Points(particlesGeometry, particlesMaterial)
-  particles.userData = { velocities, particleCount } // store data for animation
+  particles.userData = { velocities, particleCount }
 
   return particles
 }
@@ -125,12 +126,12 @@ const createModelLoader = () => {
 const initModel = (gltf) => {
   const model = gltf.scene
 
-  model.traverse((node) => {
-    if (node.isMesh) {
-      node.castShadow = true
-      node.receiveShadow = true
-    }
-  })
+  // model.traverse((node) => {
+  //   if (node.isMesh) {
+  //     node.castShadow = true
+  //     node.receiveShadow = true
+  //   }
+  // })
 
   return { model }
 }
@@ -145,13 +146,13 @@ const createText = (data, textGroup, textItems) => { // hack: ugly non-async pat
     font => {
       data.forEach((x, i) => {
         const itemGroup = new THREE.Group()
-        itemGroup.record =  { name: x.name, text: x.rationale, link: x.link }
+        itemGroup.record = { name: x.name, text: x.rationale, link: x.link }
 
         const nameGeometry = new TextGeometry(x.name, {
           font: font,
           size: 0.07,
           depth: 0.016,
-          curveSegments: 9,
+          curveSegments: utils.isMobile ? 3 : 6,
         })
 
         const material = new THREE.MeshStandardMaterial({
@@ -163,7 +164,7 @@ const createText = (data, textGroup, textItems) => { // hack: ugly non-async pat
         const nameMesh = new THREE.Mesh(nameGeometry, material)
         nameGeometry.computeBoundingBox()
         nameMesh.position.x = -nameGeometry.boundingBox.max.x / 2
-        nameMesh.position.z = 0.27
+        nameMesh.position.z = 0.01
         itemGroup.nameMesh = nameMesh
         itemGroup.add(nameMesh)
 
@@ -171,14 +172,14 @@ const createText = (data, textGroup, textItems) => { // hack: ugly non-async pat
           font: font,
           size: 0.04,
           depth: 0.016,
-          curveSegments: 9,
+          curveSegments: utils.isMobile ? 3 : 6,
         })
 
         const taglineMesh = new THREE.Mesh(taglineGeometry, material)
         taglineGeometry.computeBoundingBox();
         taglineMesh.position.x = -taglineGeometry.boundingBox.max.x / 2
         taglineMesh.position.y = -0.1
-        taglineMesh.position.z = 0.27
+        taglineMesh.position.z = 0.01
         itemGroup.add(taglineMesh)
 
         const nameBox = nameGeometry.boundingBox
@@ -211,18 +212,18 @@ const createText = (data, textGroup, textItems) => { // hack: ugly non-async pat
 }
 
 let scrollDirection = 1
-let scrollSpeed = 0.1
+let scrollSpeed = utils.isMobile() ? 0.05 : 0.1
 const updateScrolling = (textItems, delta) => {
   textItems.forEach((item) => {
-    item.mesh.position.y += scrollSpeed * delta * scrollDirection
+    item.mesh.position.y = THREE.MathUtils.lerp(item.mesh.position.y, item.mesh.position.y + scrollSpeed * delta * scrollDirection, 0.75)
 
-    if (scrollDirection == 1 && item.mesh.position.y > 3) {
-      let minY = textItems.sort((a, b) => a.mesh.position.y - b.mesh.position.y)[0].mesh.position.y
-      minY = minY > 0.5 ? 0.5 : minY
-      item.mesh.position.y = minY - textSpacing
+    if (scrollDirection === 1 && item.mesh.position.y > 3) {
+      let minY = textItems.reduce((min, t) => Math.min(min, t.mesh.position.y), Infinity)
+      minY = minY > 0.5 ? 0.5 : minY;
+      item.mesh.position.y = minY - textSpacing;
     }
-    else if (scrollDirection == -1 && item.mesh.position.y < 0) {
-      const maxY = textItems.sort((a, b) => b.mesh.position.y - a.mesh.position.y)[0].mesh.position.y
+    else if (scrollDirection === -1 && item.mesh.position.y < 0) {
+      let maxY = textItems.reduce((max, t) => Math.max(max, t.mesh.position.y), -Infinity)
       item.mesh.position.y = maxY + textSpacing
     }
   })
@@ -275,29 +276,42 @@ const searchText = query => {
 
 const setupAnimations = (renderer, scene, camera, updates) => {
   const clock = new THREE.Clock()
-
-  renderer.setAnimationLoop(() => {
-    const delta = Math.min(clock.getDelta(), 0.04)
+  const renderLoop = () => {
+    const delta = Math.min(clock.getDelta(), utils.isMobile ? 0.04 : 0.016)
 
     updates(delta)
 
     renderer.render(scene, camera)
+  }
+
+  renderer.setAnimationLoop(renderLoop)
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') {
+      renderer.setAnimationLoop(null)
+      clock.stop()
+    } else {
+      clock.start()
+      renderer.setAnimationLoop(renderLoop)
+    }
   })
 }
 
 const initScene = (containerId) => {
   const container = document.getElementById(containerId)
+  container.innerHTML = ''
+  container.classList.add('invisible')
 
   const renderer = new THREE.WebGLRenderer({ antialias: true })
   renderer.setSize(container.clientWidth, container.clientHeight)
   renderer.setPixelRatio(window.devicePixelRatio)
   renderer.outputEncoding = THREE.sRGBEncoding
-  renderer.shadowMap.enabled = true
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap
+  // renderer.shadowMap.enabled = true
+  // renderer.shadowMap.type = THREE.PCFSoftShadowMap
   container.appendChild(renderer.domElement)
 
   const scene = new THREE.Scene()
-  scene.background = new THREE.Color(0x14171C)
+  scene.background = new THREE.Color(0x000000)
 
   const camera = new THREE.PerspectiveCamera(
     calculateFOV(container),
@@ -372,6 +386,11 @@ const createScene = async (htmlContainerId, jsonFileName, modelFileName) => {
     updateOnWindowResize(container, camera, renderer)
     function setSelectedDetails(x) { selectedDetails = x }
     utils.setupMouseEvents(camera, textGroup, setSelectedDetails)
+
+    setTimeout(() => {
+      container.classList.remove('invisible')
+      container.classList.add('fadeIn')
+    }, 1000)
   })
 }
 

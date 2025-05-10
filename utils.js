@@ -6,6 +6,8 @@ const loadJSON = async (jsonFileName) => {
   return jsonData.data
 }
 
+const isMobile = () => /Mobi/i.test(navigator.userAgent)
+
 const raycaster = new THREE.Raycaster()
 const mouse = new THREE.Vector2()
 let hoveredItem = null
@@ -23,6 +25,10 @@ function setupMouseEvents(camera, textGroup, setSelectedDetails) {
 
     setSelectedDetails(undefined)
     if (hoveredItem) {
+      hoveredItem.nameMesh.material.metalness = 0
+      setTimeout(() => {
+        hoveredItem.nameMesh.material.metalness = 0.6
+      }, 600)
       setSelectedDetails(hoveredItem.record)
     }
   })
@@ -33,7 +39,10 @@ function checkIntersection(camera, textGroup) {
     raycaster.setFromCamera(mouse, camera)
     const intersects = raycaster.intersectObjects(textGroup.children, true)
     document.body.style.cursor = 'default'
-    textGroup.children.forEach(item => item.nameMesh.material.metalness = 0.6)
+    textGroup.children.forEach(item => {
+      item.nameMesh.material.metalness = 0.6
+      item.nameMesh.parent.position.z = 0.26
+    })
 
     if (hoveredItem) hoveredItem = null
 
@@ -44,6 +53,7 @@ function checkIntersection(camera, textGroup) {
         if (item.uuid === intersectedObject.uuid) {
           document.body.style.cursor = 'pointer'
           hoveredItem = intersectedObject
+          hoveredItem.nameMesh.parent.position.z = 0.25
           hoveredItem.nameMesh.material.metalness = 0
           break
         }
@@ -56,6 +66,7 @@ function checkIntersection(camera, textGroup) {
 
 export default {
   loadJSON,
+  isMobile,
   setupMouseEvents,
   checkIntersection
 }
