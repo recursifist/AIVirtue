@@ -76,10 +76,10 @@ onReady(async () => {
 
   toggleSearch.addEventListener('click', () => {
     showView(sceneContainer)
+    sceneContainer.click()
     searchContainer.classList.remove('hidden')
     searchBox.focus()
   })
-
   const clearSearch = () => {
     if (searchBox.value?.length > 0) {
       searchBox.value = ""
@@ -87,12 +87,17 @@ onReady(async () => {
     }
     showView(sceneContainer)
   }
+  const doSearch = (q) => {
+    scene.search(q)
+    document.location.hash = q
+  } 
   searchCloseButton.addEventListener('click', () => clearSearch())
   searchBox.addEventListener('keydown', (e) => { if (e.key === "Escape") clearSearch() })
-  searchBox.addEventListener("input", function () { scene.search(this.value) })
-  searchBox.addEventListener('keydown', (e) => { if (e.key === "Enter") { scene.search(searchBox.value) } })
+  searchBox.addEventListener("input", function () { doSearch(this.value) })
+  searchBox.addEventListener('keydown', (e) => { if (e.key === "Enter") { doSearch(searchBox.value) } })
 
-  sceneContainer.addEventListener('click', () => {
+  sceneContainer.addEventListener('click', (e) => {
+    e, preventDefault()
     setTimeout(() => {
       const item = scene.getSelected()
       if (item) {
@@ -112,11 +117,12 @@ onReady(async () => {
   })
 
   const searchFromUrl = () => setTimeout(() => {
-    const query = document.location.search
+    const query = document.location.hash
     if (query?.length > 1) {
-      const q = query.slice(3)
+      showView(sceneContainer)
+      const q = query.slice(1)
+      toggleSearch.click()
       searchBox.value = q
-      toggle.click()
       scene.search(q)
     }
   }, 1000)

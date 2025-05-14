@@ -19,14 +19,16 @@ const raycaster = new THREE.Raycaster()
 const mouse = new THREE.Vector2(-0.9, 0.9)
 let hoveredItem = null
 function setupMouseEvents(camera, textGroup, setSelectedDetails, slowText) {
-  window.addEventListener('mousemove', (event) => {
-    mouse.x = (event.clientX / window.innerWidth) * 2 - 1
-    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1
+  window.addEventListener('mousemove', (e) => {
+    e.preventDefault()
+    mouse.x = (e.clientX / window.innerWidth) * 2 - 1
+    mouse.y = -(e.clientY / window.innerHeight) * 2 + 1
   })
 
-  window.addEventListener('click', (event) => {
-    mouse.x = (event.clientX / window.innerWidth) * 2 - 1
-    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1
+  window.addEventListener('click', (e) => {
+    e.preventDefault()
+    mouse.x = (e.clientX / window.innerWidth) * 2 - 1
+    mouse.y = -(e.clientY / window.innerHeight) * 2 + 1
 
     checkIntersection(camera, textGroup, slowText)
 
