@@ -8,10 +8,17 @@ const loadJSON = async (jsonFileName) => {
 
 const isMobile = () => /Mobi/i.test(navigator.userAgent)
 
+const calculateFOV = (container) => {
+  const cW = container.clientWidth
+  if (cW < 482) return 60
+  else if (cW < 760) return 50
+  else return 36
+}
+
 const raycaster = new THREE.Raycaster()
-const mouse = new THREE.Vector2()
+const mouse = new THREE.Vector2(-0.9, 0.9)
 let hoveredItem = null
-function setupMouseEvents(camera, textGroup, setSelectedDetails) {
+function setupMouseEvents(camera, textGroup, setSelectedDetails, slowText) {
   window.addEventListener('mousemove', (event) => {
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1
@@ -21,7 +28,7 @@ function setupMouseEvents(camera, textGroup, setSelectedDetails) {
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1
 
-    checkIntersection(camera, textGroup)
+    checkIntersection(camera, textGroup, slowText)
 
     setSelectedDetails(undefined)
     if (hoveredItem) {
@@ -34,7 +41,7 @@ function setupMouseEvents(camera, textGroup, setSelectedDetails) {
   })
 }
 
-function checkIntersection(camera, textGroup) {
+function checkIntersection(camera, textGroup, slowText) {
   try {
     raycaster.setFromCamera(mouse, camera)
     const intersects = raycaster.intersectObjects(textGroup.children, true)
@@ -51,6 +58,7 @@ function checkIntersection(camera, textGroup) {
 
       for (const item of textGroup.children) {
         if (item.uuid === intersectedObject.uuid) {
+          slowText()
           document.body.style.cursor = 'pointer'
           hoveredItem = intersectedObject
           hoveredItem.nameMesh.parent.position.z = 0.25
@@ -67,6 +75,7 @@ function checkIntersection(camera, textGroup) {
 export default {
   loadJSON,
   isMobile,
+  calculateFOV,
   setupMouseEvents,
   checkIntersection
 }

@@ -10,50 +10,88 @@ const x = (x) => x.split('').reverse().join('').split('').map(z =>
 onReady(async () => {
   await scene.create('scene-container', 'data.json', 'scene.glb')
 
-  let searchState = false
-  let aboutState = false
+  const contentContainer = document.getElementById("content-container")
+  const homeContainer = document.getElementById("home-container")
+  const sceneContainer = document.getElementById("scene-container")
+  const criteriaContainer = document.getElementById("criteria-container")
+  const criteriaForm = criteriaContainer.querySelector("form")
+  const criteriaCloseButton = criteriaContainer.getElementsByClassName("close-button")[0]
+  const submitButton = criteriaForm.querySelector("button")
+  const descriptionContainer = document.getElementById("description-container")
+  const descriptionHtml = descriptionContainer.innerHTML
+
+  const goToWall = document.getElementById("goToWall")
+  const goToCriteria = document.getElementById("goToCriteria")
+  const toggleHome = document.getElementById("home-toggle")
+  const toggleCriteria = document.getElementById("criteria-toggle")
   const toggleSearch = document.getElementById("search-toggle")
-  const toggleAbout = document.getElementById("about-toggle")
   const searchContainer = document.getElementById("search-container")
   const searchBox = document.getElementById("searchbox")
   const searchCloseButton = searchContainer.getElementsByClassName("close-button")[0]
-  const aboutBox = document.getElementById("aboutBox")
-  const aboutCloseButton = aboutBox.getElementsByClassName("close-button")[0]
-  const sceneContainer = document.getElementById("scene-container")
-  const descriptionContainer = document.getElementById("description")
-  const descriptionHtml = descriptionContainer.innerHTML
-  const submitButton = document.querySelector("#aboutBox form input[type='button']")
 
+  const hideAllViews = () => {
+    homeContainer.classList.add("hidden")
+    sceneContainer.classList.add("hidden")
+    criteriaContainer.classList.add("hidden")
+    searchContainer.classList.add("hidden")
+    contentContainer.classList.add("hidden")
+  }
+
+  const showView = (view) => {
+    hideAllViews()
+    view.classList.remove("hidden")
+    if (view.parentElement.id === 'content-container') {
+      contentContainer.classList.remove("hidden")
+    }
+  }
+
+  goToWall.addEventListener('click', () => {
+    showView(sceneContainer)
+    window.dispatchEvent(new Event('resize'))
+  })
+  goToCriteria.addEventListener('click', () => {
+    showView(criteriaContainer)
+  })
+
+  toggleHome.addEventListener('click', () => {
+    showView(homeContainer)
+  })
+
+  toggleCriteria.addEventListener('click', () => {
+    showView(criteriaContainer)
+    criteriaContainer.focus()
+  })
+  const closeCriteria = () => {
+    showView(sceneContainer)
+    window.dispatchEvent(new Event('resize'))
+  }
+  criteriaCloseButton.addEventListener('click', closeCriteria)
+  criteriaContainer.addEventListener('keydown', (e) => { if (e.key === "Escape") closeCriteria() })
   submitButton?.addEventListener('click', (e) => {
     e.preventDefault()
-    const aboutForm = document.querySelector("#aboutBox form")
     const q = x("prf1{pjCurqrKiRoodZhxwulYLD")
-    aboutForm.setAttribute("action", "mailto:"+q)
-    aboutForm.submit()
+    criteriaForm.setAttribute("action", "mailto:" + q)
+    criteriaForm.submit()
+    showView(sceneContainer)
   })
 
   toggleSearch.addEventListener('click', () => {
-    searchState = !searchState
-    searchContainer.classList.toggle("hidden", !searchState)
+    showView(sceneContainer)
+    searchContainer.classList.remove('hidden')
     searchBox.focus()
   })
+
   const clearSearch = () => {
-    searchBox.value = ""
-    scene.search("")
-    toggleSearch.click()
+    if (searchBox.value?.length > 0) {
+      searchBox.value = ""
+      scene.search("")
+    }
+    showView(sceneContainer)
   }
   searchCloseButton.addEventListener('click', () => clearSearch())
   searchBox.addEventListener('keydown', (e) => { if (e.key === "Escape") clearSearch() })
   searchBox.addEventListener("input", function () { scene.search(this.value) })
   searchBox.addEventListener('keydown', (e) => { if (e.key === "Enter") { scene.search(searchBox.value) } })
-
-  toggleAbout.addEventListener('click', () => {
-    aboutState = !aboutState
-    aboutBox.classList.toggle("hidden", !aboutState)
-    aboutBox.focus()
-  })
-  aboutCloseButton.addEventListener('click', () => toggleAbout.click())
-  aboutBox.addEventListener('keydown', (e) => { if (e.key === "Escape") toggleAbout.click() })
 
   sceneContainer.addEventListener('click', () => {
     setTimeout(() => {

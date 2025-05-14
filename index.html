@@ -8,27 +8,27 @@
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" as="style">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
 
-  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="compass.svg">
+  <link rel="apple-touch-icon" sizes="60x60" href="compass.svg">
+  <link rel="apple-touch-icon" sizes="72x72" href="compass.svg">
+  <link rel="apple-touch-icon" sizes="76x76" href="compass.svg">
+  <link rel="apple-touch-icon" sizes="114x114" href="compass.svg">
+  <link rel="apple-touch-icon" sizes="120x120" href="compass.svg">
+  <link rel="apple-touch-icon" sizes="144x144" href="compass.svg">
+  <link rel="apple-touch-icon" sizes="152x152" href="compass.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="compass.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="compass.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="compass.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="compass.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="compass.svg">
   <link rel="manifest" href="favicon/manifest.json">
   <meta name="msapplication-TileColor" content="#111111">
-  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="msapplication-TileImage" content="compass.svg">
   <meta name="theme-color" content="#111111">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.min.css">
 
   <script type="importmap">
     {
@@ -47,49 +47,104 @@
         WALL OF HONOR
       </h1>
       <nav class="nav-menu">
-        <a href="#" class="button button-clear" id="search-toggle">Search</a>
-        <a href="#" class="button button-clear" id="about-toggle">About</a>
+        <button class="button button-clear" id="home-toggle">Home</button>
+        <button class="button button-clear" id="criteria-toggle">Criteria</button>
+        <button class="button button-clear" id="search-toggle">Search</button>
       </nav>
     </div>
   </header>
   <main>
+    <div id="content-container">
+
+      <div id="home-container">
+        <h1>Honoring AI Professionals Who Put <span class="nowrap">AI Safety First.</span></h1>
+        <section>
+          <div class="top">
+            <span class="w25 middle center">
+              <img src="./compass.svg" />
+            </span>
+            <span class="w50 middle">
+              <h2 class="title">AI Virtue</h2>
+              <p>Committing decisively to prevent
+                <b class="nowrap">AI Risk</b> and catastophic outcomes.
+              </p>
+            </span>
+          </div>
+
+          <div class="highlight center">
+            <p>
+            <h2 class="subtitle">The race to powerful AI, AGI, and even Superintelligence... is on.</h2>
+            </p>
+            <p>
+              As AI becomes more powerful and more widely used, <br>
+              more & more human control gets
+              delegrated to AI systems we can't verify are safe.
+            </p>
+            <p>
+              Making the real race not one of market, national defense or superpower,<br>
+              rather one of AI Safety verse AI Power - Power is winning.
+            </p>
+
+            <h2 class="subtitle">Those who uphold AI Virtue are on the Wall of Honor.</h2>
+            <p>
+              They are the AI professionals who choose to make safety a priority - deciding not to
+              contribute to increasing AI power, directly or by safety work that enables it.<br>
+              Often sacrificing profit, personal gain, career advancement and community.
+            </p>
+          </div>
+          <br>
+
+          <div class="center">
+            <button id="goToWall" class="button"> View the Wall of Honor </button>
+            <button id="goToCriteria" class="button button-clear">What's the criteria?</button>
+          </div>
+
+        </section>
+        <div class="bottom">"Intellectuals solve problems, geniuses prevent them." <i class="nowrap">-Albert
+            Einstein</i></div>
+      </div>
+
+      <div id="criteria-container" class="hidden">
+        <span class="close-button">&times;</span>
+        <section>
+          <h5 class="title">Selection Criteria:</h5>
+          <ul>
+            <li><span>Prominent AI researchers who abstain from frontier AI work despite their expertise.</span></li>
+            <li>AI safety whistleblowers from frontier AI labs who eschewed similar
+              organizations.</li>
+            <li>Ex-employees of frontier AI labs who prioritized safety in
+              resigning, or fired doing so, <span class="nowrap">and eschewed similar organizations.</span></li>
+            <li>Not contributing to capabilites research or safety work to the
+              support of increasing AI Risk.
+            </li>
+          </ul>
+          <p>Selected individuals are subject to re-evaluation at any time.</p>
+          <h5 class="title">Propose a Nomination:</h5>
+          <form method="POST" enctype="text/plain">
+            <fieldset>
+              <textarea id="msg" name="msg" placeholder="..." rows="3" required></textarea>
+              <button class="button">Submit</button>
+            </fieldset>
+          </form>
+        </section>
+      </div>
+    </div>
+
+    <div id="scene-container" class="hidden">
+      <div id="loading-container" class="fadeIn">Loading...</div>
+    </div>
+
     <div id="search-container" class="hidden">
       <input type="text" id="searchbox" placeholder="Search..." />
       <span class="close-button">&times;</span>
     </div>
-    <div id="description">
+
+    <div id="description-container">
       <h2>
         <span class="nowrap">Honoring AI Professionals</span> <span class="nowrap">Who Put AI Safety First.</span>
       </h2>
     </div>
-    <div id="aboutBox" class="hidden">
-      <span class="close-button">&times;</span>
-      <h5><strong>AI Virtue:</strong></h5>
-      <p>Taking a strong stance against critical AI Risk while seeking to reduce it.</p>
-      <h5><strong>Selection Criteria:</strong></h5>
-      Selected individuals are subject to re-evaluation at any time.
-      <ul>
-        <li>Prominent AI researchers who abstain from frontier AI work despite their expertise.</li>
-        <li>AI safety whistleblowers from frontier AI labs who eschewed similar
-          organizations.</li>
-        <li>Ex-employees of frontier AI labs who prioritized safety in
-          resigning, or fired doing so, and eschewed similar
-          organizations.</li>
-        <li>They do not contribute to capabilites research or safety work to the support of increasing capabilities.
-        </li>
-      </ul>
-      <br>
-      <h5><strong>Submissions & Objections:</strong></h5>
-      <form method="POST" enctype="text/plain">
-        <fieldset>
-          <textarea id="msg" name="msg" placeholder="..." rows="3" required></textarea>
-          <input class="button-primary" type="button" value="Submit">
-        </fieldset>
-      </form>
-    </div>
-    <div id="scene-container">
-      <div id="loading-container" class="fadeIn">Loading...</div>
-    </div>
+    
   </main>
 </body>
 

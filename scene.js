@@ -7,13 +7,6 @@ import utils from "./utils.min.js"
 
 THREE.Cache.enabled = true
 
-const calculateFOV = (container) => {
-  const cW = container.clientWidth
-  if (cW < 482) return 60
-  else if (cW < 760) return 50
-  else return 36
-}
-
 const createLighting = () => {
   const lights = []
   const catchlight = new THREE.SpotLight(0xffffff, 1.5)
@@ -46,6 +39,8 @@ const createLighting = () => {
   return lights
 }
 
+const particleVelocity = () => 0.002 + Math.random() * 0.001
+
 const createParticles = () => {
   const particleCount = 20
   const particlesGeometry = new THREE.BufferGeometry()
@@ -62,7 +57,7 @@ const createParticles = () => {
     positions[i * 3 + 2] = z
 
     velocities.push({
-      y: 0.001 + Math.random() * 0.01
+      y: particleVelocity()
     })
   }
 
@@ -108,7 +103,7 @@ const updateParticles = (particles, delta) => {
       positions[idx + 1] = y
       positions[idx + 2] = z
 
-      vel.y = 0.003 + Math.random() * 0.006
+      vel.y = particleVelocity()
     }
   }
 
@@ -121,19 +116,6 @@ const createModelLoader = () => {
   dracoLoader.setDecoderPath('https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/libs/draco/')
   loader.setDRACOLoader(dracoLoader)
   return loader
-}
-
-const initModel = (gltf) => {
-  const model = gltf.scene
-
-  // model.traverse((node) => {
-  //   if (node.isMesh) {
-  //     node.castShadow = true
-  //     node.receiveShadow = true
-  //   }
-  // })
-
-  return { model }
 }
 
 let selectedDetails = undefined
@@ -199,6 +181,7 @@ const createText = (data, textGroup, textItems) => { // hack: ugly non-async pat
         hitPlane.position.z = 0.26
         hitPlane.position.y = -height / 5
         itemGroup.add(hitPlane)
+        itemGroup.bbHeight = height
 
         itemGroup.position.y = i * textSpacing
 
@@ -212,10 +195,10 @@ const createText = (data, textGroup, textItems) => { // hack: ugly non-async pat
 }
 
 let scrollDirection = 1
-let scrollSpeed = utils.isMobile() ? 0.05 : 0.1
+let scrollSpeed = 0.2
 const updateScrolling = (textItems, delta) => {
   textItems.forEach((item) => {
-    item.mesh.position.y = THREE.MathUtils.lerp(item.mesh.position.y, item.mesh.position.y + scrollSpeed * delta * scrollDirection, 0.75)
+    item.mesh.position.y = THREE.MathUtils.lerp(item.mesh.position.y, item.mesh.position.y + scrollSpeed * delta * scrollDirection, 0.25)
 
     if (scrollDirection === 1 && item.mesh.position.y > 3) {
       let minY = textItems.reduce((min, t) => Math.min(min, t.mesh.position.y), Infinity)
@@ -231,7 +214,7 @@ const updateScrolling = (textItems, delta) => {
 
 let boostTimer
 const _scrollSpeed = scrollSpeed
-const textSpeedBoost = (factor, timeout) => {
+const textSpeedChange = (factor, timeout) => {
   clearTimeout(boostTimer)
   scrollSpeed = _scrollSpeed * factor
   boostTimer = setTimeout(() => { scrollSpeed = _scrollSpeed }, timeout)
@@ -250,7 +233,7 @@ const searchText = query => {
   const matches = []
   scrollDirection = 1
   resetTextSpacing(-1)
-  textSpeedBoost(0.25, 1000)
+  textSpeedChange(0.25, 1500)
 
   matches.push(..._textItems.filter(item => split(item.name)[0].startsWith(q)))
   matches.push(..._textItems.filter(item => {
@@ -306,15 +289,13 @@ const initScene = (containerId) => {
   renderer.setSize(container.clientWidth, container.clientHeight)
   renderer.setPixelRatio(window.devicePixelRatio)
   renderer.outputEncoding = THREE.sRGBEncoding
-  // renderer.shadowMap.enabled = true
-  // renderer.shadowMap.type = THREE.PCFSoftShadowMap
   container.appendChild(renderer.domElement)
 
   const scene = new THREE.Scene()
   scene.background = new THREE.Color(0x000000)
 
   const camera = new THREE.PerspectiveCamera(
-    calculateFOV(container),
+    utils.calculateFOV(container),
     container.clientWidth / container.clientHeight,
     0.1,
     500
@@ -327,7 +308,7 @@ const initScene = (containerId) => {
 
 const updateOnWindowResize = (container, camera, renderer) => {
   window.addEventListener('resize', () => {
-    camera.fov = calculateFOV(container)
+    camera.fov = utils.calculateFOV(container)
     camera.aspect = container.clientWidth / container.clientHeight
     camera.updateProjectionMatrix()
     renderer.setSize(container.clientWidth, container.clientHeight)
@@ -337,7 +318,7 @@ const updateOnWindowResize = (container, camera, renderer) => {
 const updateScrollDirection = (container) => {
   const changeDirection = (direction) => {
     scrollDirection = direction
-    textSpeedBoost(6, 40)
+    textSpeedChange(6, 40)
   }
 
   container.addEventListener('wheel', (e) => {
@@ -363,7 +344,7 @@ const createScene = async (htmlContainerId, jsonFileName, modelFileName) => {
 
   loader.load(modelFileName, async (gltf) => {
     const { container, renderer, scene, camera } = initScene(htmlContainerId)
-    const { model } = initModel(gltf)
+    const model = gltf.scene
     const lights = createLighting()
     const textGroup = new THREE.Group()
     const particles = createParticles()
@@ -375,8 +356,10 @@ const createScene = async (htmlContainerId, jsonFileName, modelFileName) => {
     const data = await utils.loadJSON(jsonFileName)
     createText(data, textGroup, textItems)
 
+    const slowText = () => textSpeedChange(0.5, 10)
+
     const updates = (delta) => {
-      utils.checkIntersection(camera, textGroup)
+      utils.checkIntersection(camera, textGroup, slowText)
       updateParticles(particles, delta)
       if (textItems.length > 0) updateScrolling(textItems, delta)
     }
@@ -385,7 +368,7 @@ const createScene = async (htmlContainerId, jsonFileName, modelFileName) => {
     updateScrollDirection(container)
     updateOnWindowResize(container, camera, renderer)
     function setSelectedDetails(x) { selectedDetails = x }
-    utils.setupMouseEvents(camera, textGroup, setSelectedDetails)
+    utils.setupMouseEvents(camera, textGroup, setSelectedDetails, slowText)
 
     setTimeout(() => {
       container.classList.remove('invisible')
