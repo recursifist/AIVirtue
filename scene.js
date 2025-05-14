@@ -124,18 +124,11 @@ let _textItems = []
 const textSpacing = 0.4
 const createText = (data, textGroup, textItems) => { // hack: ugly non-async pattern
   const fontLoader = new FontLoader()
-  fontLoader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json',
+  fontLoader.load('helvetiker_regular.typeface.json',
     font => {
       data.forEach((x, i) => {
         const itemGroup = new THREE.Group()
         itemGroup.record = { name: x.name, text: x.rationale, link: x.link }
-
-        const nameGeometry = new TextGeometry(x.name, {
-          font: font,
-          size: 0.07,
-          depth: 0.016,
-          curveSegments: utils.isMobile ? 3 : 6,
-        })
 
         const material = new THREE.MeshStandardMaterial({
           color: 0xffbe46,
@@ -143,6 +136,12 @@ const createText = (data, textGroup, textItems) => { // hack: ugly non-async pat
           roughness: 0.5,
         })
 
+        const nameGeometry = new TextGeometry(x.name, {
+          font: font,
+          size: 0.07,
+          depth: 0.016,
+          curveSegments: utils.isMobile ? 3 : 6,
+        })
         const nameMesh = new THREE.Mesh(nameGeometry, material)
         nameGeometry.computeBoundingBox()
         nameMesh.position.x = -nameGeometry.boundingBox.max.x / 2
@@ -150,18 +149,29 @@ const createText = (data, textGroup, textItems) => { // hack: ugly non-async pat
         itemGroup.nameMesh = nameMesh
         itemGroup.add(nameMesh)
 
+        const textWidth = nameGeometry.boundingBox.max.x - nameGeometry.boundingBox.min.x
+        const underlineGeometry = new THREE.BoxGeometry(
+          textWidth + 0.05,
+          0.002,
+          0.015
+        )
+        const underlineMesh = new THREE.Mesh(underlineGeometry, material)
+        underlineMesh.position.x = nameMesh.position.x + textWidth / 2
+        underlineMesh.position.y = nameMesh.position.y - 0.01
+        underlineMesh.position.z = nameMesh.position.z
+        itemGroup.add(underlineMesh)
+
         const taglineGeometry = new TextGeometry(x.tagline, {
           font: font,
           size: 0.04,
           depth: 0.016,
           curveSegments: utils.isMobile ? 3 : 6,
         })
-
         const taglineMesh = new THREE.Mesh(taglineGeometry, material)
-        taglineGeometry.computeBoundingBox();
+        taglineGeometry.computeBoundingBox()
         taglineMesh.position.x = -taglineGeometry.boundingBox.max.x / 2
         taglineMesh.position.y = -0.1
-        taglineMesh.position.z = 0.01
+        taglineMesh.position.z = nameMesh.position.z
         itemGroup.add(taglineMesh)
 
         const nameBox = nameGeometry.boundingBox
@@ -169,7 +179,7 @@ const createText = (data, textGroup, textItems) => { // hack: ugly non-async pat
         const width = Math.max(nameBox.max.x - nameBox.min.x, taglineBox.max.x - taglineBox.min.x)
         const height = Math.abs(taglineMesh.position.y) + (nameBox.max.y - nameBox.min.y) + (taglineBox.max.y - taglineBox.min.y)
 
-        const planeGeometry = new THREE.PlaneGeometry(width + 0.1, height + 0.1);
+        const planeGeometry = new THREE.PlaneGeometry(width + 0.1, height + 0.1)
         const planeMaterial = new THREE.MeshBasicMaterial({
           color: 0xffffff,
           transparent: true,
@@ -195,15 +205,15 @@ const createText = (data, textGroup, textItems) => { // hack: ugly non-async pat
 }
 
 let scrollDirection = 1
-let scrollSpeed = 0.2
+let scrollSpeed = 0.05
 const updateScrolling = (textItems, delta) => {
   textItems.forEach((item) => {
     item.mesh.position.y = THREE.MathUtils.lerp(item.mesh.position.y, item.mesh.position.y + scrollSpeed * delta * scrollDirection, 0.25)
 
     if (scrollDirection === 1 && item.mesh.position.y > 3) {
       let minY = textItems.reduce((min, t) => Math.min(min, t.mesh.position.y), Infinity)
-      minY = minY > 0.5 ? 0.5 : minY;
-      item.mesh.position.y = minY - textSpacing;
+      minY = minY > 0.5 ? 0.5 : minY
+      item.mesh.position.y = minY - textSpacing
     }
     else if (scrollDirection === -1 && item.mesh.position.y < 0) {
       let maxY = textItems.reduce((max, t) => Math.max(max, t.mesh.position.y), -Infinity)
@@ -217,7 +227,10 @@ const _scrollSpeed = scrollSpeed
 const textSpeedChange = (factor, timeout) => {
   clearTimeout(boostTimer)
   scrollSpeed = _scrollSpeed * factor
-  boostTimer = setTimeout(() => { scrollSpeed = _scrollSpeed }, timeout)
+  boostTimer = setTimeout(() => {
+    scrollSpeed = _scrollSpeed * factor * 0.25
+    boostTimer = setTimeout(() => { scrollSpeed = _scrollSpeed }, timeout * .25)
+  }, timeout * .75)
 }
 
 const resetTextSpacing = (targetY) => {
@@ -270,7 +283,7 @@ const setupAnimations = (renderer, scene, camera, updates) => {
   renderer.setAnimationLoop(renderLoop)
 
   document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'hidden') {
+    if (container.visibilityState === 'hidden') {
       renderer.setAnimationLoop(null)
       clock.stop()
     } else {
@@ -315,10 +328,10 @@ const updateOnWindowResize = (container, camera, renderer) => {
   })
 }
 
-const updateScrollDirection = (container) => {
+const updateScrollDirection = (container, textItems) => {
   const changeDirection = (direction) => {
     scrollDirection = direction
-    textSpeedChange(6, 40)
+    textSpeedChange(150, 250)
   }
 
   container.addEventListener('wheel', (e) => {
@@ -356,7 +369,7 @@ const createScene = async (htmlContainerId, jsonFileName, modelFileName) => {
     const data = await utils.loadJSON(jsonFileName)
     createText(data, textGroup, textItems)
 
-    const slowText = () => textSpeedChange(0.5, 10)
+    const slowText = () => { } //textSpeedChange(0.5, 10)
 
     const updates = (delta) => {
       utils.checkIntersection(camera, textGroup, slowText)
@@ -365,7 +378,7 @@ const createScene = async (htmlContainerId, jsonFileName, modelFileName) => {
     }
     setupAnimations(renderer, scene, camera, updates)
 
-    updateScrollDirection(container)
+    updateScrollDirection(container, textItems)
     updateOnWindowResize(container, camera, renderer)
     function setSelectedDetails(x) { selectedDetails = x }
     utils.setupMouseEvents(camera, textGroup, setSelectedDetails, slowText)

@@ -43,11 +43,11 @@ onReady(async () => {
     if (view.parentElement.id === 'content-container') {
       contentContainer.classList.remove("hidden")
     }
+    window.dispatchEvent(new Event('resize'))
   }
 
   goToWall.addEventListener('click', () => {
     showView(sceneContainer)
-    window.dispatchEvent(new Event('resize'))
   })
   goToCriteria.addEventListener('click', () => {
     showView(criteriaContainer)
@@ -63,7 +63,6 @@ onReady(async () => {
   })
   const closeCriteria = () => {
     showView(sceneContainer)
-    window.dispatchEvent(new Event('resize'))
   }
   criteriaCloseButton.addEventListener('click', closeCriteria)
   criteriaContainer.addEventListener('keydown', (e) => { if (e.key === "Escape") closeCriteria() })
