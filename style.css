@@ -1,8 +1,8 @@
 :root {
-  --primary: #a9740d;
-  --secondary: #f7a533;
+  --primary: #ebc072;
+  --secondary: #cd8a0e;
   --light: #fae9d2;
-  --dark: #131416;
+  --dark: #111213;
   --navbar: #1a2027;
   --background: #14171C;
 }
@@ -15,7 +15,7 @@ body {
   min-width: 200px !important;
   background: #000 !important;
   color: white;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   user-select: none;
   overscroll-behavior-y: none;
@@ -49,7 +49,8 @@ main {
 .subtitle {
   font-size: 2rem;
   font-weight: normal;
-  color: var(--secondary) !important;
+  color: var(--primary) !important;
+  margin-bottom: 0;
 }
 
 .tagline {
@@ -79,7 +80,7 @@ main {
 
 .nav-container {
   width: 80%;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: .75rem 0;
   display: flex;
@@ -108,13 +109,13 @@ main {
 
 #content-container {
   position: absolute;
-  top: 10%;
-  bottom: 13%;
+  top: 16%;
+  bottom: 19%;
   left: 10%;
   right: 10%;
   height: auto;
   width: 80%;
-  max-width: 800px;
+  max-width: 1000px;
   margin: auto;
   z-index: 90;
   color: var(--light);
@@ -127,18 +128,19 @@ main {
 #home-container {
   height: 100%;
   min-height: 100%;
+  border-top: 3px solid var(--primary);
   border-bottom: 3px solid var(--primary);
-  background: var(--background);
+  background: var(--dark);
   overflow-y: auto;
 }
 
 #home-container h1 {
-  padding: 1rem;
-  margin-bottom: 1rem;
-  text-align: center;
+  padding: 1rem 6rem;
+  margin-bottom: 0;
+  font-weight: bold;
   font-size: 20px;
-  color: var(--background) !important;
-  background: var(--secondary);
+  color: var(--primary) !important;
+  background: var(--background);
 }
 
 #home-container div {
@@ -147,23 +149,31 @@ main {
 
 #home-container .top {
   text-align: left;
-  padding: 0 3rem;
+  padding: 0rem 3rem;
+  padding-top: 1rem;
+  margin-bottom: 0;
   font-size: 1.75rem;
-  font-weight: bold;
+  background: var(--background);
 }
-
+#home-container .top span p {
+  font-weight: normal;
+}
 #home-container .top img {
-  margin: -2rem;
-  min-width: 200px;
-  max-width: 200px;
+  margin: -1rem;
+  padding: 0;
+  min-width: 160px;
+  max-width: 160px;
 }
 
 #home-container .top span:first-child {
   margin-right: 40px;
 }
+#home-container .top span:not(:first-child) {
+  margin-top: 1rem;
+}
 
 #home-container .highlight {
-  background: var(--navbar);
+  background: var(--dark);
 }
 
 #home-container .bottom {
