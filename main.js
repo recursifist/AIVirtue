@@ -98,7 +98,7 @@ onReady(async () => {
   searchBox.addEventListener('keydown', (e) => { if (e.key === "Enter") { doSearch(searchBox.value) } })
 
   sceneContainer.addEventListener('click', (e) => {
-    e, preventDefault()
+    e.preventDefault()
     setTimeout(() => {
       const item = scene.getSelected()
       if (item) {
