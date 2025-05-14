@@ -20,13 +20,11 @@ const mouse = new THREE.Vector2(-0.9, 0.9)
 let hoveredItem = null
 function setupMouseEvents(camera, textGroup, setSelectedDetails, slowText) {
   window.addEventListener('mousemove', (e) => {
-    e.preventDefault()
     mouse.x = (e.clientX / window.innerWidth) * 2 - 1
     mouse.y = -(e.clientY / window.innerHeight) * 2 + 1
   })
 
   window.addEventListener('click', (e) => {
-    e.preventDefault()
     mouse.x = (e.clientX / window.innerWidth) * 2 - 1
     mouse.y = -(e.clientY / window.innerHeight) * 2 + 1
 
@@ -40,6 +38,7 @@ function setupMouseEvents(camera, textGroup, setSelectedDetails, slowText) {
       }, 600)
       setSelectedDetails(hoveredItem.record)
     }
+    e.preventDefault()
   })
 }
 
