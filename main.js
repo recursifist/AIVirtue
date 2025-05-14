@@ -84,6 +84,7 @@ onReady(async () => {
     if (searchBox.value?.length > 0) {
       searchBox.value = ""
       scene.search("")
+      document.location.hash = ''
     }
     showView(sceneContainer)
   }
