@@ -15,7 +15,8 @@ body {
   min-width: 200px !important;
   background: #000 !important;
   color: white;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-smooth: always;
   font-weight: 500;
   user-select: none;
   overscroll-behavior-y: none;
