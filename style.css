@@ -21,6 +21,8 @@ body {
   user-select: none;
   overscroll-behavior-y: none;
   touch-action: pan-x pan-y;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none; 
   overflow: hidden;
 }
 
@@ -207,22 +209,29 @@ main {
   z-index: 55;
 }
 
-#description-container * {
-  color: var(--secondary);
-}
-
-#description-container p {
+#description-container strong {
   font-size: 2rem !important;
   margin: 0;
+  color: var(--secondary) !important;
 }
 
-#description-container span {
-  font-size: 2.5rem !important;
+
+#description-container p {
+  font-size: 1.5rem !important;
+  margin: 0;
+  color: var(--primary);
+}
+
+#description-container a {
+  opacity: 0.8;
 }
 
 #description-container h2 {
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-weight: bold;
+  font-size: 2.5rem !important;
+  color: var(--secondary) !important;
 }
 
 #description-container .close-button {
@@ -275,9 +284,6 @@ main {
 }
 
 #scene-container {
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none; 
   height: 100%;
   width: 100%;
   z-index: 0;

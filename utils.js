@@ -18,17 +18,17 @@ const calculateFOV = (container) => {
 const raycaster = new THREE.Raycaster()
 const mouse = new THREE.Vector2(-0.9, 0.9)
 let hoveredItem = null
-function setupMouseEvents(camera, textGroup, setSelectedDetails, slowText) {
-  window.addEventListener('mousemove', (e) => {
+function setupMouseEvents(camera, container, textGroup, setSelectedDetails, slowText) {
+  container.addEventListener('mousemove', (e) => {
     mouse.x = (e.clientX / window.innerWidth) * 2 - 1
     mouse.y = -(e.clientY / window.innerHeight) * 2 + 1
   })
 
-  window.addEventListener('click', (e) => {
+  container.addEventListener('click', (e) => {
     mouse.x = (e.clientX / window.innerWidth) * 2 - 1
     mouse.y = -(e.clientY / window.innerHeight) * 2 + 1
 
-    checkIntersection(camera, textGroup, slowText)
+    checkIntersection(camera, container, textGroup, slowText)
 
     setSelectedDetails(undefined)
     if (hoveredItem) {
@@ -42,11 +42,11 @@ function setupMouseEvents(camera, textGroup, setSelectedDetails, slowText) {
   })
 }
 
-function checkIntersection(camera, textGroup, slowText) {
+function checkIntersection(camera, container, textGroup, slowText) {
   try {
     raycaster.setFromCamera(mouse, camera)
     const intersects = raycaster.intersectObjects(textGroup.children, true)
-    document.body.style.cursor = 'default'
+    container.style.cursor = 'default'
     textGroup.children.forEach(item => {
       item.nameMesh.material.metalness = 0.6
       item.nameMesh.parent.position.z = 0.26
@@ -60,7 +60,7 @@ function checkIntersection(camera, textGroup, slowText) {
       for (const item of textGroup.children) {
         if (item.uuid === intersectedObject.uuid) {
           slowText()
-          document.body.style.cursor = 'pointer'
+          container.style.cursor = 'pointer'
           hoveredItem = intersectedObject
           hoveredItem.nameMesh.parent.position.z = 0.25
           hoveredItem.nameMesh.material.metalness = 0

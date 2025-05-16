@@ -372,7 +372,7 @@ const createScene = async (htmlContainerId, jsonFileName, modelFileName) => {
     const slowText = () => { } //textSpeedChange(0.5, 10)
 
     const updates = (delta) => {
-      utils.checkIntersection(camera, textGroup, slowText)
+      utils.checkIntersection(camera, container, textGroup, slowText)
       updateParticles(particles, delta)
       if (textItems.length > 0) updateScrolling(textItems, delta)
     }
@@ -381,7 +381,7 @@ const createScene = async (htmlContainerId, jsonFileName, modelFileName) => {
     updateScrollDirection(container, textItems)
     updateOnWindowResize(container, camera, renderer)
     function setSelectedDetails(x) { selectedDetails = x }
-    utils.setupMouseEvents(camera, textGroup, setSelectedDetails, slowText)
+    utils.setupMouseEvents(camera, container, textGroup, setSelectedDetails, slowText)
 
     setTimeout(() => {
       container.classList.remove('invisible')
