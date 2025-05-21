@@ -138,6 +138,18 @@
       "link": "https://www.jessehoogland.com/",
       "tagline": "Timaeus - AI Safety Researcher",
       "rationale": "Leads Timaeus, an AI safety research organization focused on developmental interpretability, with a strong emphasis on singular learning theory to understand how AI systems learn and generalize, advocating for safer AI development through rigorous empirical and theoretical research."
+    },
+    {
+      "name": "Jeffrey Ladish",
+      "link": "https://jeffreyladish.com/",
+      "tagline": "Palisade Research - AI Safety and Cybersecurity",
+      "rationale": "Leads Palisade Research, focusing on offensive AI capabilities to understand risks of losing control to AI systems, with prior experience building Anthropic’s information security program and advising government on AI and emerging tech risks."
+    },
+    {
+      "name": "Seán Ó hÉigeartaigh",
+      "link": "https://www.cser.ac.uk/team/sean-o-heigeartaigh/",
+      "tagline": "University of Cambridge - CSER",
+      "rationale": "Leads the AI: Futures and Responsibility Programme at the University of Cambridge, focusing on foresight, risk, and governance of advanced AI systems, with a strong emphasis on mitigating catastrophic risks. His work at the Centre for the Study of Existential Risk (CSER) prioritizes AI safety without contributing to capabilities research, and he has advised global bodies like the OECD and UN on AI risks."
     }
   ]
 }
