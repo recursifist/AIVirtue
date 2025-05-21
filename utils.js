@@ -3,7 +3,7 @@ import * as THREE from 'three'
 const loadJSON = async (jsonFileName) => {
   const response = await fetch(jsonFileName)
   const jsonData = await response.json()
-  return jsonData.data
+  return jsonData.data?.sort(() => Math.random() > 0.5 ? 1 : -1)
 }
 
 const isMobile = () => /Mobi/i.test(navigator.userAgent)

@@ -96,6 +96,48 @@
       "link": "https://www.alignmentforum.org/users/daniel-kokotajlo",
       "tagline": "Ex-OpenAI - Safety-Focused Researcher",
       "rationale": "Ex-OpenAI safety researcher who has consistently focused on existential risks from advanced AI, particularly timelines and forecasting risks, while avoiding work that could accelerate AI capability development."
+    },
+    {
+      "name": "Dan Hendrycks",
+      "link": "https://people.eecs.berkeley.edu/~hendrycks/",
+      "tagline": "CAIS - AI Safety Pioneer & Benchmarks Creator",
+      "rationale": "As founder of the Center for AI Safety, he focuses exclusively on research aimed at reducing catastrophic AI risks while developing safety benchmarks and advocating for responsible AI development over capabilities advancement."
+    },
+    {
+      "name": "Connor Leahy",
+      "link": "https://en.wikipedia.org/wiki/Connor_Leahy",
+      "tagline": "Conjecture AI - AI Safety Researcher",
+      "rationale": "After co-founding EleutherAI, Leahy shifted focus to establishing Conjecture, an organization dedicated to solving AI alignment problems while advocating for safety-first approaches to AI development and openly warning about existential risks. Also co-founded ControlAI."
+    },
+    {
+      "name": "Sid Black",
+      "link": "https://scholar.google.com/citations?user=ckPrWskAAAAJ",
+      "tagline": "Conjecture AI - AI Safety Researcher",
+      "rationale": "Co-founder of EleutherAI who has pivoted to focus on AI safety concerns, advocating for responsible development practices and emphasizing the importance of alignment research over capabilities advancement."
+    },
+    {
+      "name": "Gabriel Alfour",
+      "link": "https://www.conjecture.dev/about",
+      "tagline": "Conjecture AI - ML Ethics Researcher",
+      "rationale": "Researcher focused on AI ethics and risk reduction who has consistently raised concerns about uncontrolled AI advancement and advocated for stronger safety measures before further capabilities development."
+    },
+    {
+      "name": "Jacob Hilton",
+      "link": "https://www.jacobh.co.uk/",
+      "tagline": "Ex-OpenAI Research Scientist - ARC",
+      "rationale": "Left his position at OpenAI to join the Alignment Research Center, dedicating his work exclusively to AI alignment problems and safety research rather than continuing to advance AI capabilities at a frontier lab."
+    },
+    {
+      "name": "Richard Ngo",
+      "link": "https://scholar.google.com/citations?user=7CY93A4AAAAJ",
+      "tagline": "Ex-OpenAI - AI Safety Researcher ",
+      "rationale": "Former OpenAI governance team member who publicly resigned over concerns that the company had departed from its mission of ensuring AGI development goes well, previously worked on safety at DeepMind and has extensively published on AI alignment challenges."
+    },
+    {
+      "name": "Jesse Hoogland",
+      "link": "https://www.jessehoogland.com/",
+      "tagline": "Timaeus - AI Safety Researcher",
+      "rationale": "Leads Timaeus, an AI safety research organization focused on developmental interpretability, with a strong emphasis on singular learning theory to understand how AI systems learn and generalize, advocating for safer AI development through rigorous empirical and theoretical research."
     }
   ]
 }
