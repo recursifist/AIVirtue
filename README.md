@@ -1,8 +1,12 @@
 # AI Virtue Wall of Honor
 
+<picture>
+  <img src="compass.svg" alt="AI Virtue AIVirtue.info" width="180">
+</picture>
+
 **AI Virtue** - Committing decisively to prevent AI Risk and catastrophic outcomes.  
 
-Social tool for AI risk reduction by listing the names of AI Professionals who uphold AI Virtue.  
+Social tool to encourage better AI ethics by listing the names of AI Professionals who uphold AI Virtue.  
 Nominees are AI Professionals who choose to make safety a priority - deciding not to contribute to increasing AI capabilities, directly or by safety work that straightforwardly accelerates it. 
 
 It was to be an articulate list of hard criteria but was met with some debated feedback so it'll be democratized now.  
@@ -28,20 +32,18 @@ Basically it means favoring:
 - Lambda arrow functions and dot function chaining (with single char variables).
 - Constants, white-space formatting, less brackets and no semis!  \\(._. )  
 
-__**data.json**__
+### Files
 
+- __**data.json**__  
 Data is provided via JSON file (full schema provided). It contains the name, tagline, links and rationale for each nominee.
 
-__**main.js**__
-
+- __**main.js**__  
 Entry file, sets up the 3D scene and wires the JS DOM gunk.
 
-__**scene.js**__
-
+- __**scene.js**__  
 Creates the scene, lighting, particles, text and functionality.
 
-__**index.html**__
-
+- __**index.html**__  
 This is where the home and criteria text is set.  
 For efficiency (laziness), CSS/HTML is messy due to delegating to free Claude but fighting it.
 
@@ -53,5 +55,4 @@ For efficiency (laziness), CSS/HTML is messy due to delegating to free Claude bu
 
 ### Comments
 
-Plain Javascript due to F# binding overheads - WebSharper Three.js bindings weren't up-to-date and using an equivalent .NET framework was more work.  
-This was not meant as an open source project, merely freetech a.k.a. github pages free & transparent source.
+Plain Javascript due to F# binding overheads - WebSharper Three.js bindings weren't up-to-date and using an equivalent .NET framework was more work. This was not meant as an open source project, merely freetech a.k.a. github pages free & transparent source.
