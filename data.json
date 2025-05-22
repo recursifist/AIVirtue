@@ -104,24 +104,6 @@
       "rationale": "As founder of the Center for AI Safety, he focuses exclusively on research aimed at reducing catastrophic AI risks while developing safety benchmarks and advocating for responsible AI development over capabilities advancement."
     },
     {
-      "name": "Connor Leahy",
-      "link": "https://en.wikipedia.org/wiki/Connor_Leahy",
-      "tagline": "Conjecture AI - AI Safety Researcher",
-      "rationale": "After co-founding EleutherAI, Leahy shifted focus to establishing Conjecture, an organization dedicated to solving AI alignment problems while advocating for safety-first approaches to AI development and openly warning about existential risks. Also co-founded ControlAI."
-    },
-    {
-      "name": "Sid Black",
-      "link": "https://scholar.google.com/citations?user=ckPrWskAAAAJ",
-      "tagline": "Conjecture AI - AI Safety Researcher",
-      "rationale": "Co-founder of EleutherAI who has pivoted to focus on AI safety concerns, advocating for responsible development practices and emphasizing the importance of alignment research over capabilities advancement."
-    },
-    {
-      "name": "Gabriel Alfour",
-      "link": "https://www.conjecture.dev/about",
-      "tagline": "Conjecture AI - ML Ethics Researcher",
-      "rationale": "Researcher focused on AI ethics and risk reduction who has consistently raised concerns about uncontrolled AI advancement and advocated for stronger safety measures before further capabilities development."
-    },
-    {
       "name": "Jacob Hilton",
       "link": "https://www.jacobh.co.uk/",
       "tagline": "Ex-OpenAI Research Scientist - ARC",
