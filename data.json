@@ -52,8 +52,8 @@
     {
       "name": "Paul Christiano",
       "link": "https://paulfchristiano.com/",
-      "tagline": "Ex-OpenAI Researcher - ARC",
-      "rationale": "Founded the Alignment Research Center after leaving OpenAI, focusing exclusively on AI alignment problems while abstaining from capabilities research that could accelerate AI development."
+      "tagline": "Ex-OpenAI - US AI Safety Institute",
+      "rationale": "Founded the Alignment Research Center (also METR) after leaving OpenAI, focusing exclusively on AI alignment problems while abstaining from capabilities research that could accelerate AI development. Currently at US AI Safety Institute."
     },
     {
       "name": "Steven Adler",
@@ -64,7 +64,7 @@
     {
       "name": "William Saunders",
       "link": "https://scholar.google.com/citations?user=8hjFFAoAAAAJ",
-      "tagline": "Ex-OpenAI Safety Researcher - ARC",
+      "tagline": "Ex-OpenAI - Safety Researcher - ARC",
       "rationale": "Left OpenAI to join the Alignment Research Center, expressing concerns about the pace of AI development and choosing to focus exclusively on alignment research rather than capabilities advancement."
     },
     {
@@ -82,13 +82,13 @@
     {
       "name": "Gretchen Krueger",
       "link": "https://scholar.google.com/citations?user=astFxkwAAAAJ",
-      "tagline": "Ex-OpenAI Researcher - AI Safety Advocate",
+      "tagline": "Ex-OpenAI - AI Safety Advocate",
       "rationale": "Ex-researcher at OpenAI who shifted focus to AI safety and has spoken publicly about the importance of careful development of increasingly powerful AI systems."
     },
     {
       "name": "Cullen O'Keefe",
       "link": "https://www.cullenokeefe.com/",
-      "tagline": "Ex-OpenAI Legal Counsel - AI Governance Expert",
+      "tagline": "Ex-OpenAI - AI Governance Expert",
       "rationale": "Ex-legal counsel at OpenAI who left to focus on AI governance and safety through EA organizations, advocating for legal frameworks to mitigate AI risks rather than accelerating capabilities."
     },
     {
@@ -102,6 +102,30 @@
       "link": "https://people.eecs.berkeley.edu/~hendrycks/",
       "tagline": "CAIS - AI Safety Pioneer & Benchmarks Creator",
       "rationale": "As founder of the Center for AI Safety, he focuses exclusively on research aimed at reducing catastrophic AI risks while developing safety benchmarks and advocating for responsible AI development over capabilities advancement."
+    },
+    {
+      "name": "Oliver Zhang",
+      "link": "https://safe.ai/about",
+      "tagline": "CAIS - AI Safety Researcher & Policy Advocate",
+      "rationale": "Researcher at the Center for AI Safety focused on catastrophic AI risk reduction, contributing to safety research and policy advocacy while abstaining from work that would accelerate AI capabilities development without adequate safety measures."
+    },
+    {
+      "name": "Connor Leahy",
+      "link": "https://en.wikipedia.org/wiki/Connor_Leahy",
+      "tagline": "Conjecture AI - AI Safety Researcher",
+      "rationale": "After co-founding EleutherAI, Leahy shifted focus to establishing Conjecture, an organization dedicated to solving AI alignment problems while advocating for safety-first approaches to AI development and openly warning about existential risks. Also co-founded ControlAI."
+    },
+    {
+      "name": "Sid Black",
+      "link": "https://scholar.google.com/citations?user=ckPrWskAAAAJ",
+      "tagline": "Conjecture AI - AI Safety Researcher",
+      "rationale": "Co-founder of EleutherAI who has pivoted to focus on AI safety concerns, advocating for responsible development practices and emphasizing the importance of alignment research over capabilities advancement."
+    },
+    {
+      "name": "Gabriel Alfour",
+      "link": "https://www.conjecture.dev/about",
+      "tagline": "Conjecture AI - ML Ethics Researcher",
+      "rationale": "Researcher focused on AI ethics and risk reduction who has consistently raised concerns about uncontrolled AI advancement and advocated for stronger safety measures before further capabilities development."
     },
     {
       "name": "Jacob Hilton",
@@ -128,10 +152,52 @@
       "rationale": "Leads Palisade Research, focusing on offensive AI capabilities to understand risks of losing control to AI systems, with prior experience building Anthropic’s information security program and advising government on AI and emerging tech risks."
     },
     {
-      "name": "Seán Ó hÉigeartaigh",
+      "name": "Sean O hEigeartaigh",
       "link": "https://www.cser.ac.uk/team/sean-o-heigeartaigh/",
       "tagline": "University of Cambridge - CSER",
       "rationale": "Leads the AI: Futures and Responsibility Programme at the University of Cambridge, focusing on foresight, risk, and governance of advanced AI systems, with a strong emphasis on mitigating catastrophic risks. His work at the Centre for the Study of Existential Risk (CSER) prioritizes AI safety without contributing to capabilities research, and he has advised global bodies like the OECD and UN on AI risks."
+    },
+    {
+      "name": "Ryan Greenblatt",
+      "link": "https://www.redwoodresearch.org/team",
+      "tagline": "Redwood Research - AI Alignment Researcher",
+      "rationale": "Researcher at Redwood Research focusing on AI safety and alignment problems, working specifically on methods to make AI systems safer rather than more capable, with emphasis on reducing risks from advanced AI development."
+    },
+    {
+      "name": "Buck Shlegeris",
+      "link": "https://www.redwoodresearch.org/team",
+      "tagline": "Redwood Research - AI Safety Researcher & Educator",
+      "rationale": "Redwood Research scientist focused exclusively on AI alignment problems who has consistently advocated against advancing AI capabilities without robust safety measures, dedicating his work to reducing existential risks from advanced AI systems."
+    },
+    {
+      "name": "Adam Gleave",
+      "link": "https://far.ai/about/team",
+      "tagline": "FAR.AI - AI Safety & Alignment Researcher",
+      "rationale": "Founder of FAR.AI dedicated to fundamental AI alignment research, focusing exclusively on safety problems and risk reduction rather than contributing to capabilities advancement that could accelerate unsafe AI development."
+    },
+    {
+      "name": "Karl Berzins",
+      "link": "https://far.ai/about/team",
+      "tagline": "FAR.AI - AI Alignment Research Scientist",
+      "rationale": "Research scientist at FAR.AI working on AI alignment and safety problems, dedicating his efforts to reducing existential risks from advanced AI systems while avoiding work that would accelerate capabilities without safety guarantees."
+    },
+    {
+      "name": "David Scott Krueger",
+      "link": "https://davidscottkrueger.com/",
+      "tagline": "Cambridge - AI Safety & Alignment Researcher",
+      "rationale": "University of Cambridge researcher focused on AI safety and alignment problems, advocating for careful development of AI systems and emphasizing safety research over capabilities advancement to reduce potential existential risks."
+    },
+    {
+      "name": "Jacob Steinhardt",
+      "link": "https://jsteinhardt.stat.berkeley.edu/",
+      "tagline": "UC Berkeley - AI Safety & Robustness Researcher",
+      "rationale": "UC Berkeley professor specializing in AI safety and robustness research, focusing on making AI systems more reliable and safer rather than advancing capabilities, with particular emphasis on understanding and mitigating AI risks."
+    },
+    {
+      "name": "Beth Barnes",
+      "link": "https://metr.org/team/beth-barnes/",
+      "tagline": "METR - Frontier AI Safety Researcher",
+      "rationale": "Research scientist at METR (formerly ARC Evals) working on evaluating and understanding risks from frontier AI systems, focusing on safety assessment and risk mitigation rather than advancing AI capabilities."
     }
   ]
 }

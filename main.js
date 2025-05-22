@@ -4,8 +4,6 @@ function onReady(fun) {
   if (document.readyState === "complete" || document.readyState === "interactive") setTimeout(fun, 1)
   else document.addEventListener("DOMContentLoaded", fun)
 }
-const x = (x) => x.split('').reverse().join('').split('').map(z =>
-  String.fromCharCode(z.charCodeAt(0) - 3)).join('')
 
 onReady(async () => {
   await scene.create('scene-container', 'data.json', 'scene.glb')
@@ -14,9 +12,7 @@ onReady(async () => {
   const homeContainer = document.getElementById("home-container")
   const sceneContainer = document.getElementById("scene-container")
   const criteriaContainer = document.getElementById("criteria-container")
-  const criteriaForm = criteriaContainer.querySelector("form")
   const criteriaCloseButton = criteriaContainer.getElementsByClassName("close-button")[0]
-  const submitButton = criteriaForm.querySelector("button")
   const descriptionContainer = document.getElementById("description-container")
   const descriptionHtml = descriptionContainer.innerHTML
 
@@ -66,13 +62,6 @@ onReady(async () => {
   }
   criteriaCloseButton.addEventListener('click', closeCriteria)
   criteriaContainer.addEventListener('keydown', (e) => { if (e.key === "Escape") closeCriteria() })
-  submitButton?.addEventListener('click', (e) => {
-    e.preventDefault()
-    const q = x("prf1{pjCurqrKiRoodZhxwulYLD")
-    criteriaForm.setAttribute("action", "mailto:" + q)
-    criteriaForm.submit()
-    showView(sceneContainer)
-  })
 
   toggleSearch.addEventListener('click', () => {
     showView(sceneContainer)
@@ -128,4 +117,9 @@ onReady(async () => {
     }
   }, 1000)
   searchFromUrl()
+
+  setTimeout(() => {
+    document.body.classList.remove('invisible')
+    document.body.classList.add('fadeIn')
+  }, 500)
 })
