@@ -7,7 +7,7 @@
 **AI Virtue** - Committing decisively to prevent AI Risk and catastrophic outcomes.  
 
 Social tool to encourage better AI ethics by listing the names of AI Professionals who uphold AI Virtue.  
-Nominees are AI Professionals who choose to make safety a priority - deciding not to contribute to increasing AI capabilities, directly or by safety work that straightforwardly accelerates it. 
+Nominees are AI Technical Professionals who choose to make safety a priority - deciding not to contribute to increasing AI capabilities, directly or by safety work that straightforwardly accelerates it. 
 
 It was to be an articulate list of hard criteria but was met with some debated feedback so it'll be democratized now.  
 It will start as a widely inclusive list that will get pruned by crowd-debate via the x.com Community "AI Virtue".
