@@ -10,7 +10,7 @@
     {
       "name": "Yoshua Bengio",
       "link": "https://yoshuabengio.org/",
-      "tagline": "MILA - Pioneer of Deep Learning",
+      "tagline": "LawZero - MILA - Pioneer of Deep Learning",
       "rationale": "While continuing fundamental AI research at MILA, Bengio has shifted focus toward AI safety and governance, advocating for careful development and regulation of powerful AI systems to prevent potential harms."
     },
     {
@@ -52,7 +52,7 @@
     {
       "name": "Paul Christiano",
       "link": "https://paulfchristiano.com/",
-      "tagline": "Ex-OpenAI - US AI Safety Institute",
+      "tagline": "Ex-OpenAI - US AI Safety Institute (AISI)",
       "rationale": "Founded the Alignment Research Center (also METR) after leaving OpenAI, focusing exclusively on AI alignment problems while abstaining from capabilities research that could accelerate AI development. Currently at US AI Safety Institute."
     },
     {
@@ -64,7 +64,7 @@
     {
       "name": "William Saunders",
       "link": "https://scholar.google.com/citations?user=8hjFFAoAAAAJ",
-      "tagline": "Ex-OpenAI - Safety Researcher - ARC",
+      "tagline": "Ex-OpenAI - ARC - Safety Researcher",
       "rationale": "Left OpenAI to join the Alignment Research Center, expressing concerns about the pace of AI development and choosing to focus exclusively on alignment research rather than capabilities advancement."
     },
     {
@@ -76,7 +76,7 @@
     {
       "name": "Rosie Campbell",
       "link": "https://www.rosiecampbell.xyz/about",
-      "tagline": "Ex-OpenAI & Anthropic",
+      "tagline": "Ex-OpenAI - Ex-Anthropic - PAI",
       "rationale": "Left OpenAI to co-found the Anthropic safety team before moving to the Partnership on AI, consistently focusing her career on AI safety and governance rather than capabilities advancement."
     },
     {
@@ -94,7 +94,7 @@
     {
       "name": "Daniel Kokotajlo",
       "link": "https://www.alignmentforum.org/users/daniel-kokotajlo",
-      "tagline": "Ex-OpenAI - Safety-Focused Researcher",
+      "tagline": "Ex-OpenAI - AI Safety Researcher",
       "rationale": "Ex-OpenAI safety researcher who has consistently focused on existential risks from advanced AI, particularly timelines and forecasting risks, while avoiding work that could accelerate AI capability development."
     },
     {
@@ -148,7 +148,7 @@
     {
      "name": "Daniel Murfet",
      "link": "https://scholar.google.com/citations?user=ilWvLq0AAAAJ",
-     "tagline": "Timaeus - Melbourne Uni - AI Safety Mathematician",
+     "tagline": "Timaeus - U of Melbourne - AI Safety Mathematician",
      "rationale": "University of Melbourne mathematician and research director at Timaeus who has shifted focus to AI safety research, applying mathematical foundations to understanding AI alignment problems and advocating for rigorous safety approaches before advancing AI capabilities."
     },
     {
@@ -160,7 +160,7 @@
     {
       "name": "Jeffrey Ladish",
       "link": "https://jeffreyladish.com/",
-      "tagline": "Palisade Research - AI Safety and Cybersecurity",
+      "tagline": "Palisade Research - AI Safety & Cybersecurity",
       "rationale": "Leads Palisade Research, focusing on offensive AI capabilities to understand risks of losing control to AI systems, with prior experience building Anthropic’s information security program and advising government on AI and emerging tech risks."
     },
     {
@@ -178,7 +178,7 @@
     {
       "name": "Buck Shlegeris",
       "link": "https://www.redwoodresearch.org/team",
-      "tagline": "Redwood Research - AI Safety Researcher & Educator",
+      "tagline": "Redwood Research - AI Safety Researcher",
       "rationale": "Redwood Research scientist focused exclusively on AI alignment problems who has consistently advocated against advancing AI capabilities without robust safety measures, dedicating his work to reducing existential risks from advanced AI systems."
     },
     {
@@ -190,7 +190,7 @@
     {
       "name": "Karl Berzins",
       "link": "https://far.ai/about/team",
-      "tagline": "FAR.AI - AI Alignment Research Scientist",
+      "tagline": "FAR.AI - AI Alignment Researcher",
       "rationale": "Research scientist at FAR.AI working on AI alignment and safety problems, dedicating his efforts to reducing existential risks from advanced AI systems while avoiding work that would accelerate capabilities without safety guarantees."
     },
     {
@@ -214,7 +214,7 @@
     {
      "name": "Marius Hobbhahn",
      "link": "https://www.mariushobbhahn.com/",
-     "tagline": "Apollo Research CEO - AI Safety & Alignment Researcher",
+     "tagline": "Apollo Research - AI Safety & Alignment Researcher",
      "rationale": "CEO and co-founder of Apollo Research, an organization dedicated to AI safety and alignment research, focusing on reducing existential risks from advanced AI systems while advocating for safety-first approaches over rapid capabilities development."
     },
     {
