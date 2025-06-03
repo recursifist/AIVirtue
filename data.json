@@ -146,6 +146,18 @@
       "rationale": "Leads Timaeus, an AI safety research organization focused on developmental interpretability, with a strong emphasis on singular learning theory to understand how AI systems learn and generalize, advocating for safer AI development through rigorous empirical and theoretical research."
     },
     {
+     "name": "Daniel Murfet",
+     "link": "https://scholar.google.com/citations?user=ilWvLq0AAAAJ",
+     "tagline": "Timaeus - Melbourne Uni - AI Safety Mathematician",
+     "rationale": "University of Melbourne mathematician and research director at Timaeus who has shifted focus to AI safety research, applying mathematical foundations to understanding AI alignment problems and advocating for rigorous safety approaches before advancing AI capabilities."
+    },
+    {
+     "name": "Alexander Gietelink Oldenziel",
+     "link": "https://openreview.net/profile?id=~Alexander_Gietelink_Oldenziel1",
+     "tagline": "Timaeus - AI Safety Researcher",
+     "rationale": "Researcher at Timaeus focused on AI safety and alignment problems, contributing to the rationalist community's understanding of AI risks while advocating for safety-first approaches to AI development over capabilities advancement."
+    },
+    {
       "name": "Jeffrey Ladish",
       "link": "https://jeffreyladish.com/",
       "tagline": "Palisade Research - AI Safety and Cybersecurity",
@@ -198,6 +210,18 @@
       "link": "https://metr.org/team/beth-barnes/",
       "tagline": "METR - Frontier AI Safety Researcher",
       "rationale": "Research scientist at METR (formerly ARC Evals) working on evaluating and understanding risks from frontier AI systems, focusing on safety assessment and risk mitigation rather than advancing AI capabilities."
+    },
+    {
+     "name": "Marius Hobbhahn",
+     "link": "https://www.mariushobbhahn.com/",
+     "tagline": "Apollo Research CEO - AI Safety & Alignment Researcher",
+     "rationale": "CEO and co-founder of Apollo Research, an organization dedicated to AI safety and alignment research, focusing on reducing existential risks from advanced AI systems while advocating for safety-first approaches over rapid capabilities development."
+    },
+    {
+     "name": "Owain Evans",
+     "link": "https://www.truthfulai.org/about",
+     "tagline": "Truthful AI - CHAI - AI Safety Researcher",
+     "rationale": "Founder of Truthful AI focused on developing methods to make AI systems more truthful and reliable, prioritizing AI safety and alignment research over capabilities advancement to reduce risks from deceptive or unaligned AI systems."
     }
   ]
 }
