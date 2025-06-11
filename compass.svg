@@ -1,302 +1,40 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xml:space="preserve"
-   width="2835"
-   height="2835"
-   style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd"
-   viewBox="0 0 2836 2836"
-   id="svg2"
-   sodipodi:version="0.32"
-   inkscape:version="0.46"
-   inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   version="1.0"
-   sodipodi:modified="true"><metadata
-   id="metadata149"><rdf:RDF><cc:Work
-       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><sodipodi:namedview
-   inkscape:window-height="750"
-   inkscape:window-width="1280"
-   inkscape:pageshadow="2"
-   inkscape:pageopacity="0.0"
-   guidetolerance="10.0"
-   gridtolerance="10.0"
-   objecttolerance="10.0"
-   borderopacity="1.0"
-   bordercolor="#666666"
-   pagecolor="#ffffff"
-   id="base"
-   inkscape:zoom="0.24323002"
-   inkscape:cx="1387.1505"
-   inkscape:cy="1312.5742"
-   inkscape:window-x="-8"
-   inkscape:window-y="-8"
-   inkscape:current-layer="svg2"
-   showgrid="true"
-   width="800.10002mm"
-   height="800.10002mm"
-   units="mm"
-   gridanglex="8.4666669mm"
-   gridanglez="8.4666669mm"
-   grid_units="mm"
-   inkscape:document-units="mm"><inkscape:grid
-     id="GridFromPre046Settings"
-     type="xygrid"
-     originx="0px"
-     originy="0px"
-     spacingx="1mm"
-     spacingy="1mm"
-     color="#0000ff"
-     empcolor="#0000ff"
-     opacity="0.2"
-     empopacity="0.4"
-     empspacing="5" /></sodipodi:namedview>
- <defs
-   id="defs4"><inkscape:perspective
-   sodipodi:type="inkscape:persp3d"
-   inkscape:vp_x="0 : 1417.5 : 1"
-   inkscape:vp_y="0 : 1000 : 0"
-   inkscape:vp_z="2835 : 1417.5 : 1"
-   inkscape:persp3d-origin="1417.5 : 945 : 1"
-   id="perspective2617" /><linearGradient
-   id="linearGradient3754"><stop
-     style="stop-color:#f7a533;stop-opacity:1;"
-     offset="0"
-     id="stop3756" /><stop
-     id="stop11820"
-     offset="0.32727271"
-     style="stop-color:#f7a533;stop-opacity:1;" />
-     </linearGradient><linearGradient
-   id="linearGradient2847"><stop
-     style="stop-color:#a9740d;stop-opacity:1;"
-     offset="0"
-     id="stop2849" /><stop
-     id="stop10925"
-     offset="0.21818182"
-     style="stop-color:#a9740d;stop-opacity:1;" /></linearGradient><linearGradient
-   id="linearGradient2841"><stop
-     id="stop2843"
-     offset="0"
-     style="stop-color:#a9740d;stop-opacity:1;" /><stop
-     id="stop2845"
-     offset="1"
-     style="stop-color:#a9740d;stop-opacity:0;" /></linearGradient>
+<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke-linecap="round">
 
- <linearGradient
-   inkscape:collect="always"
-   xlink:href="#linearGradient2847"
-   id="linearGradient2268"
-   gradientUnits="userSpaceOnUse"
-   x1="1460.7534"
-   y1="1418.5093"
-   x2="1460.7534"
-   y2="352.69614" /><linearGradient
-   inkscape:collect="always"
-   xlink:href="#linearGradient3754"
-   id="linearGradient2277"
-   gradientUnits="userSpaceOnUse"
-   x1="1417.4907"
-   y1="1415.9645"
-   x2="1417.4907"
-   y2="352.99988" /></defs>
+    <!-- Vertical & Horizontal rays -->
+    <g stroke-width="0.6" stroke="#f8b663">
+      <line x1="12" y1="12" x2="4" y2="12" stroke-width="0.6"/>
+      <line x1="12" y1="12" x2="20" y2="12" stroke-width="0.6"/>
+      <line x1="12" y1="12" x2="12" y2="20" stroke-width="0.6"/>
+      <line x1="12" y1="12" x2="12" y2="4" stroke-width="0.6"/>
+    </g>
 
+    <!-- Diagonal rays -->
+    <g stroke-width="0.5" stroke="#eea031">
+      <line x1="12" y1="12" x2="16.95" y2="16.95"/>
+      <line x1="12" y1="12" x2="7.05" y2="7.05"/>
+      <line x1="12" y1="12" x2="16.95" y2="7.05"/>
+      <line x1="12" y1="12" x2="7.05" y2="16.95"/>
+    </g>
 
-<!-- added -->
-<g id="additional16" transform="translate(1418,1418)" >
-<line x1="0" y1="-780" x2="0" y2="780" stroke-width="4" stroke="black"
-  transform="rotate(11.25)" />
-<line x1="0" y1="-780" x2="0" y2="780" stroke-width="4" stroke="black"
-  transform="rotate(33.75)" />
-<line x1="0" y1="-780" x2="0" y2="780" stroke-width="4" stroke="black"
-  transform="rotate(56.25)" />
-<line x1="0" y1="-780" x2="0" y2="780" stroke-width="4" stroke="black"
-  transform="rotate(78.75)" />
-<line x1="0" y1="-780" x2="0" y2="780" stroke-width="4" stroke="black"
-  transform="rotate(101.25)" />
-<line x1="0" y1="-780" x2="0" y2="780" stroke-width="4" stroke="black"
-  transform="rotate(123.75)" />
-<line x1="0" y1="-780" x2="0" y2="780" stroke-width="4" stroke="black"
-  transform="rotate(146.25)" />
-<line x1="0" y1="-780" x2="0" y2="780" stroke-width="4" stroke="black"
-  transform="rotate(168.75)" />
-</g>
+    <!-- Diagonal rays2 -->
 
-<g id="g32">
-   <path
-   style="fill:#f7a533;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path34"
-   d="M 1102,654 L 1463,1310 L 1418,1418 L 1310,1373 L 1102,654 z "
-   class="fil0 str0" />
-   <path
-   style="fill:#f7a533;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path36"
-   d="M 1734,2182 L 1526,1463 L 1418,1418 L 1373,1526 L 1734,2182 z "
-   class="fil0 str0" />
-   <path
-   style="fill:#f7a533;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path38"
-   d="M 654,1734 L 1310,1373 L 1418,1418 L 1373,1526 L 654,1734 z "
-   class="fil0 str0" />
-   <path
-   style="fill:#f7a533;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path40"
-   d="M 2182,1102 L 1463,1310 L 1418,1418 L 1526,1463 L 2182,1102 z "
-   class="fil0 str0" />
-   <path
-   style="fill:#a9740d;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path42"
-   d="M 1418,1418 L 1734,2182 L 1526,1463 L 1418,1418 z "
-   class="fil1 str0" />
-   <path
-   style="fill:#a9740d;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path44"
-   d="M 1418,1418 L 2182,1102 L 1526,1463 L 1418,1418 z "
-   class="fil1 str0" />
-   <path
-   style="fill:#a9740d;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path48"
-   d="M 1418,1418 L 1102,654 L 1463,1310 L 1418,1418 z "
-   class="fil1 str0" />
-   <path
-   style="fill:#a9740d;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path50"
-   d="M 1418,1418 L 654,1734 L 1373,1526 L 1418,1418 z "
-   class="fil1 str0" />
+    <g stroke-width="0.2" stroke="#ffcc95">
+      <g transform="rotate(22.5, 12, 12)">
+        <line x1="12" y1="12" x2="15.465" y2="15.465"/>
+        <line x1="12" y1="12" x2="8.535" y2="8.535"/>
+        <line x1="12" y1="12" x2="15.465" y2="8.535"/>
+        <line x1="12" y1="12" x2="8.535" y2="15.465"/>
+      </g>
+      <g transform="rotate(-22.5, 12, 12)">
+        <line x1="12" y1="12" x2="15.465" y2="15.465"/>
+        <line x1="12" y1="12" x2="8.535" y2="8.535"/>
+        <line x1="12" y1="12" x2="15.465" y2="8.535"/>
+        <line x1="12" y1="12" x2="8.535" y2="15.465"/>
+      </g>
+    </g>
+
+    <circle cx="12" cy="12" r="1.4" fill="#ffcc95"/>
+
   </g>
-<g id="g52">
-   <path
-   style="fill:#f7a533;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path54"
-   d="M 654,1102 L 1373,1310 L 1418,1418 L 1310,1463 L 654,1102 z "
-   class="fil0 str0" />
-   <path
-   style="fill:#f7a533;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path56"
-   d="M 2182,1734 L 1526,1373 L 1418,1418 L 1463,1526 L 2182,1734 z "
-   class="fil0 str0" />
-   <path
-   style="fill:#f7a533;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path58"
-   d="M 1102,2182 L 1310,1463 L 1418,1418 L 1463,1526 L 1102,2182 z "
-   class="fil0 str0" />
-   <path
-   style="fill:#f7a533;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path60"
-   d="M 1734,654 L 1373,1310 L 1418,1418 L 1526,1373 L 1734,654 z "
-   class="fil0 str0" />
-   <path
-   style="fill:#a9740d;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path62"
-   d="M 1418,1418 L 2182,1734 L 1526,1373 L 1418,1418 z "
-   class="fil1 str0" />
-   <path
-   style="fill:#a9740d;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path64"
-   d="M 1418,1418 L 1734,654 L 1526,1373 L 1418,1418 z "
-   class="fil1 str0" />
-   <path
-   style="fill:#a9740d;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path68"
-   d="M 1418,1418 L 654,1102 L 1373,1310 L 1418,1418 z "
-   class="fil1 str0" />
-   <path
-   style="fill:#a9740d;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path70"
-   d="M 1418,1418 L 1102,2182 L 1463,1526 L 1418,1418 z "
-   class="fil1 str0" />
-</g>
-<g id="g72">
-   <path
-   style="fill:#f7a533;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path74"
-   d="M 2086,750 L 1552,1418 L 1418,1418 L 1418,1284 L 2086,750 z "
-   class="fil0 str0" />
-   <path
-   style="fill:#f7a533;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path76"
-   d="M 750,2086 L 1418,1552 L 1418,1418 L 1284,1418 L 750,2086 z "
-   class="fil0 str0" />
-   <path
-   style="fill:#f7a533;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path78"
-   d="M 750,750 L 1418,1284 L 1418,1418 L 1284,1418 L 750,750 z "
-   class="fil0 str0" />
-   <path
-   style="fill:#f7a533;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path80"
-   d="M 2086,2086 L 1552,1418 L 1418,1418 L 1418,1552 L 2086,2086 z "
-   class="fil0 str0" />
-   <path
-   style="fill:#a9740d;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path82"
-   d="M 1418,1418 L 750,2086 L 1418,1552 L 1418,1418 z "
-   class="fil1 str0" />
-   <path
-   style="fill:#a9740d;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path84"
-   d="M 1418,1418 L 2086,2086 L 1418,1552 L 1418,1418 z "
-   class="fil1 str0" />
-   <path
-   style="fill:#a9740d;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path86"
-   d="M 1418,1418 L 2086,750 L 1552,1418 L 1418,1418 z "
-   class="fil1 str0" />
-   <path
-   style="fill:#a9740d;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path88"
-   d="M 1418,1418 L 750,750 L 1284,1418 L 1418,1418 z "
-   class="fil1 str0" />
-  </g>
-
-<path
-   style="fill:#f7a533;fill-opacity:1;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path92"
-   d="M 1418,355 L 1524,1312 L 1418,1418 L 1312,1312 L 1418,355 z "
-   class="fil0 str0" />
-<path
-   style="fill:#f7a533;fill-opacity:1;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path96"
-   d="M 355,1418 L 1312,1312 L 1418,1418 L 1312,1524 L 355,1418 z "
-   class="fil0 str0" />
-<path
-   style="fill:#f7a533;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path98"
-   d="M 2481,1418 L 1524,1312 L 1418,1418 L 1524,1524 L 2481,1418 z "
-   class="fil0 str0" />
-<path
-   style="fill:#a9740d;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path102"
-   d="M 1418,1418 L 2481,1418 L 1524,1524 L 1418,1418 z "
-   class="fil1 str0" />
-<path
-   style="fill:url(#linearGradient2268);fill-opacity:1;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path106"
-   d="M 1418,1418 L 1418,355 L 1524,1312 L 1418,1418 z "
-   class="fil1 str0" />
-<path
-   style="fill:#a9740d;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path108"
-   d="M 1418,1418 L 355,1418 L 1312,1524 L 1418,1418 z "
-   class="fil1 str0" />
-
-<g id="g142">
-<path
-   style="fill:#a9740d;fill-opacity:1;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path144"
-   d="M 1418,2481 L 1418,1418 L 1524,1524 L 1418,2481 z "
-   class="fil4 str0" />
-<path
-   style="fill:#f7a533;fill-opacity:1;stroke:#1f1a17;stroke-width:4;stroke-linejoin:round"
-   id="path146"
-   d="M 1418,1418 L 1418,2481 L 1312,1524 L 1418,1418 z "
-   class="fil5 str0" />
-  </g>
-
 </svg>
