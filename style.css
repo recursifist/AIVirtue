@@ -163,7 +163,7 @@ main {
 }
 #home-container .top img {
   margin: -1rem;
-  padding: 0;
+  padding: 1rem !important;
   min-width: 160px;
   max-width: 160px;
 }
@@ -343,8 +343,12 @@ main {
 
 ul {
   list-style-position: inside;
-  list-style-type: lower-roman;
+  list-style: upper-roman;
   margin-left: 0.25rem;
+  line-height: 2;
+}
+li::marker {
+  font-weight: bold;
 }
 
 textarea,

@@ -28,7 +28,7 @@ onReady(async () => {
   let firstVisit = true
   const countVisit = () => {
     if (firstVisit) { 
-      fetch('https://api.unifiedsigning.xyz/n/aivirtue')
+      //fetch('')
       firstVisit = false
     }
   }

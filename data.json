@@ -146,16 +146,16 @@
       "rationale": "Leads Timaeus, an AI safety research organization focused on developmental interpretability, with a strong emphasis on singular learning theory to understand how AI systems learn and generalize, advocating for safer AI development through rigorous empirical and theoretical research."
     },
     {
-     "name": "Daniel Murfet",
-     "link": "https://scholar.google.com/citations?user=ilWvLq0AAAAJ",
-     "tagline": "Timaeus - U of Melbourne - AI Safety Mathematician",
-     "rationale": "University of Melbourne mathematician and research director at Timaeus who has shifted focus to AI safety research, applying mathematical foundations to understanding AI alignment problems and advocating for rigorous safety approaches before advancing AI capabilities."
+      "name": "Daniel Murfet",
+      "link": "https://scholar.google.com/citations?user=ilWvLq0AAAAJ",
+      "tagline": "Timaeus - U of Melbourne - AI Safety Mathematician",
+      "rationale": "University of Melbourne mathematician and research director at Timaeus who has shifted focus to AI safety research, applying mathematical foundations to understanding AI alignment problems and advocating for rigorous safety approaches before advancing AI capabilities."
     },
     {
-     "name": "Alexander Gietelink Oldenziel",
-     "link": "https://openreview.net/profile?id=~Alexander_Gietelink_Oldenziel1",
-     "tagline": "Timaeus - AI Safety Researcher",
-     "rationale": "Researcher at Timaeus focused on AI safety and alignment problems, contributing to the rationalist community's understanding of AI risks while advocating for safety-first approaches to AI development over capabilities advancement."
+      "name": "Alexander Gietelink Oldenziel",
+      "link": "https://openreview.net/profile?id=~Alexander_Gietelink_Oldenziel1",
+      "tagline": "Timaeus - AI Safety Researcher",
+      "rationale": "Researcher at Timaeus focused on AI safety and alignment problems, contributing to the rationalist community's understanding of AI risks while advocating for safety-first approaches to AI development over capabilities advancement."
     },
     {
       "name": "Jeffrey Ladish",
@@ -212,16 +212,64 @@
       "rationale": "Research scientist at METR (formerly ARC Evals) working on evaluating and understanding risks from frontier AI systems, focusing on safety assessment and risk mitigation rather than advancing AI capabilities."
     },
     {
-     "name": "Marius Hobbhahn",
-     "link": "https://www.mariushobbhahn.com/",
-     "tagline": "Apollo Research - AI Safety & Alignment Researcher",
-     "rationale": "CEO and co-founder of Apollo Research, an organization dedicated to AI safety and alignment research, focusing on reducing existential risks from advanced AI systems while advocating for safety-first approaches over rapid capabilities development."
+      "name": "Marius Hobbhahn",
+      "link": "https://www.mariushobbhahn.com/",
+      "tagline": "Apollo Research - AI Safety & Alignment Researcher",
+      "rationale": "CEO and co-founder of Apollo Research, an organization dedicated to AI safety and alignment research, focusing on reducing existential risks from advanced AI systems while advocating for safety-first approaches over rapid capabilities development."
     },
     {
-     "name": "Owain Evans",
-     "link": "https://www.truthfulai.org/about",
-     "tagline": "Truthful AI - CHAI - AI Safety Researcher",
-     "rationale": "Founder of Truthful AI focused on developing methods to make AI systems more truthful and reliable, prioritizing AI safety and alignment research over capabilities advancement to reduce risks from deceptive or unaligned AI systems."
+      "name": "Owain Evans",
+      "link": "https://www.truthfulai.org/about",
+      "tagline": "Truthful AI - CHAI - AI Safety Researcher",
+      "rationale": "Founder of Truthful AI focused on developing methods to make AI systems more truthful and reliable, prioritizing AI safety and alignment research over capabilities advancement to reduce risks from deceptive or unaligned AI systems."
+    },
+    {
+      "name": "Tamsin Leake",
+      "link": "https://orxl.org/",
+      "tagline": "Orthogonal - AI Alignment Organization Researcher",
+      "rationale": "Researcher at Orthogonal, an organization focused specifically on AI alignment problems, dedicating her work to ensuring AI systems remain aligned with human values while avoiding contributions to capabilities advancement."
+    },
+    {
+      "name": "Stuart Armstrong",
+      "link": "https://buildaligned.ai/about-us",
+      "tagline": "Aligned AI - AI Safety Research Pioneer",
+      "rationale": "Co-founder of Aligned AI and former FHI researcher, dedicated exclusively to AI alignment and safety problems, advocating for careful AI development approaches while abstaining from work that would advance AI capabilities without safety guarantees."
+    },
+    {
+      "name": "Rebecca Gorman",
+      "link": "https://buildaligned.ai/about-us",
+      "tagline": "Aligned AI - AI Safety & Alignment Researcher",
+      "rationale": "Co-founder of Aligned AI, an organization dedicated exclusively to AI alignment and safety research, focusing on developing approaches to ensure AI systems remain beneficial while abstaining from capabilities research that could accelerate unsafe AI development."
+    },
+    {
+      "name": "John Wentworth",
+      "link": "https://www.alignmentforum.org/users/johnswentworth",
+      "tagline": "Independent AI Alignment Theorist",
+      "rationale": "Independent researcher focused exclusively on fundamental AI alignment theory and problems, contributing to alignment research through theoretical work while completely abstaining from any capabilities research or development."
+    },
+    {
+      "name": "David Manheim",
+      "link": "https://about.me/davidmanheim",
+      "tagline": "ALTER - AI Safety & Risk Analysis Expert",
+      "rationale": "Researcher at ALTER focused on AI safety and existential risk analysis, dedicating his work to understanding and preventing catastrophic outcomes from advanced AI while abstaining from capabilities research."
+    },
+    {
+      "name": "Vanessa Kosoy",
+      "link": "https://alter.org.il/en/about-alter-2/",
+      "tagline": "ALTER - AGI Alignment Researcher",
+      "rationale": "AGI alignment researcher at ALTER focused exclusively on solving alignment problems for artificial general intelligence, working on theoretical foundations to ensure safe AI development while avoiding contributions to capabilities advancement."
+    },
+    {
+      "name": "Shahar Avin",
+      "link": "https://www.shaharavin.com/",
+      "tagline": "CSER Cambridge - AI Risk & Safety Researcher",
+      "rationale": "Senior Research Associate at Cambridge's Centre for the Study of Existential Risk, focusing on understanding and mitigating catastrophic risks from advanced AI systems while advocating for safety-first approaches over capabilities advancement."
+    },
+    {
+      "name": "Dylan Hadfield-Menell",
+      "link": "https://people.csail.mit.edu/dhm/",
+      "tagline": "MIT CSAIL - Algorithmic Alignment Group",
+      "rationale": "MIT professor who runs the Algorithmic Alignment Group, focusing exclusively on AI alignment problems and ensuring AI systems align with human values and societal goals, while advocating for AI safety approaches over pure capabilities advancement."
     }
   ]
 }
