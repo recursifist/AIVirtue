@@ -342,9 +342,8 @@ main {
 }
 
 ul {
-  list-style-position: inside;
+  list-style-position: inside !important;
   list-style: upper-roman;
-  margin-left: 0.25rem;
   line-height: 2;
 }
 li::marker {
