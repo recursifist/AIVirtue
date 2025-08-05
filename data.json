@@ -270,6 +270,42 @@
       "link": "https://people.csail.mit.edu/dhm/",
       "tagline": "MIT CSAIL - Algorithmic Alignment Group",
       "rationale": "MIT professor who runs the Algorithmic Alignment Group, focusing exclusively on AI alignment problems and ensuring AI systems align with human values and societal goals, while advocating for AI safety approaches over pure capabilities advancement."
+    },
+    {
+      "name": "Douglas Hofstadter",
+      "link": "https://www.youtube.com/watch?v=lfXxzAVtdpU&t=1763s",
+      "tagline": "Indiana University - Cognitive Scientist & Author",
+      "rationale": "Renowned cognitive scientist and author of 'Gödel, Escher, Bach'. He significantly shifted his views on AI timelines, stated that the progress of AI is so unexpected and accelerating that it feels like an oncoming tsunami that will catch humanity off guard. Historically he's been an AI skeptic, advocated for careful consideration of consciousness and intelligence rather than pursuing advanced AI capabilities without understanding."
+    },
+    {
+      "name": "Carl Feynman",
+      "link": "https://independent.academia.edu/CarlFeynman",
+      "tagline": "AI Safety Advocate & Computer Scientist",
+      "rationale": "Computer scientist and son of physicist Richard Feynman who has advocated for careful AI development approaches, expressing concerns about advanced AI systems and supporting safety-first methodologies over rapid capabilities advancement."
+    },
+    {
+      "name": "Esben Kran",
+      "link": "https://kran.ai/cache/a439a79eb419be5dda635034f722ec41",
+      "tagline": "Apart Research CEO - AI Safety Researcher",
+      "rationale": "CEO and co-founder of Apart Research, an organization dedicated to AI safety research and alignment problems, focusing on reducing existential risks from advanced AI systems while prioritizing safety measures over rapid capabilities development."
+    },
+    {
+      "name": "Jason Hoelscher-Obermaier",
+      "link": "https://www.linkedin.com/in/jason-hoelscher-obermaier/",
+      "tagline": "Apart Research - AI Safety Research Director",
+      "rationale": "Research director at Apart Research focused on AI safety and alignment problems, leading initiatives to understand and mitigate risks from advanced AI systems while advocating for safety-first approaches over capabilities advancement."
+    },
+    {
+      "name": "Paul Riechers",
+      "link": "https://www.linkedin.com/in/paul-riechers/",
+      "tagline": "Simplex - AI Safety & Complexity Researcher",
+      "rationale": "Researcher at Simplex focused on AI safety through complexity science approaches, working to understand and mitigate risks from advanced AI systems while abstaining from capabilities research that could accelerate unsafe AI development."
+    },
+    {
+      "name": "Adam Shai",
+      "link": "https://www.linkedin.com/in/adam-shai/",
+      "tagline": "Simplex - AI Safety & Neuroscience Researcher",
+      "rationale": "Researcher at Simplex applying neuroscience principles to AI safety problems, focusing on understanding AI system behavior to ensure safe development while avoiding work that would advance capabilities without safety guarantees."
     }
   ]
 }
