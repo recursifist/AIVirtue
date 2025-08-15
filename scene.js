@@ -145,7 +145,7 @@ const createText = (data, textGroup, textItems) => { // hack: ugly non-async pat
         const nameMesh = new THREE.Mesh(nameGeometry, material)
         nameGeometry.computeBoundingBox()
         nameMesh.position.x = -nameGeometry.boundingBox.max.x / 2
-        nameMesh.position.z = 0.01
+        nameMesh.position.z = 0.015
         itemGroup.nameMesh = nameMesh
         itemGroup.add(nameMesh)
 
