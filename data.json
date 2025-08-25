@@ -306,6 +306,30 @@
       "link": "https://www.linkedin.com/in/adam-shai/",
       "tagline": "Simplex - AI Safety & Neuroscience Researcher",
       "rationale": "Researcher at Simplex applying neuroscience principles to AI safety problems, focusing on understanding AI system behavior to ensure safe development while avoiding work that would advance capabilities without safety guarantees."
+    },
+    {
+      "name": "Steve Byrnes",
+      "link": "https://www.stevebyrnes.com/",
+      "tagline": "Astera Institute - AI Safety & Neuroscience Researcher",
+      "rationale": "Physics PhD from UC Berkeley who transitioned from physics research to dedicated AI safety work at Astera Institute. With a 90% P(Doom) assessment, he focuses specifically on preventing catastrophic outcomes from advanced AI systems, particularly brain-like AGI safety challenges at the intersection of neuroscience and AI alignment."
+    },
+    {
+      "name": "Ajeya Cotra",
+      "link": "https://www.alignmentforum.org/users/ajeya-cotra",
+      "tagline": "Open Philanthropy - AI Forecasting & Safety Research",
+      "rationale": "Senior researcher leading technical AI safety grantmaking and forecasting at Open Philanthropy. Her influential work on AI timelines and capability development explicitly models catastrophic risks from advanced AI systems, focusing funding on preventing AI takeover scenarios and loss of human control."
+    },
+    {
+      "name": "Jess Whittlestone",
+      "link": "https://www.jesswhittlestone.com/",
+      "tagline": "Centre for Long-Term Resilience - AI Governance & Safety",
+      "rationale": "Senior researcher at the Centre for Long-Term Resilience focusing on long-term AI governance and safety challenges. Her work emphasizes the catastrophic risks from advanced AI systems and the need for robust governance frameworks to prevent existential threats from uncontrolled AI development."
+    },
+    {
+      "name": "Benjamin Weinstein-Raun",
+      "link": "https://www.linkedin.com/in/benjamin-weinstein-raun/",
+      "tagline": "Palisade Research - AI Safety & Risk Analysis",
+      "rationale": "Researcher at Palisade Research working on AI safety and cybersecurity risks, focusing on understanding scenarios where humanity could lose control to AI systems. His work at Palisade contributes to analyzing and preventing catastrophic outcomes from advanced AI development."
     }
   ]
 }
