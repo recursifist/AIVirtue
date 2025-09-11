@@ -187,6 +187,8 @@ main {
   right:0;
   bottom: 0;
   text-align: center;
+  border-top: 1px solid var(--secondary) !important;
+  box-shadow: 0 0 5px #000;
   font-size: 20px;
   color: var(--secondary) !important;
   background: var(--background);
@@ -439,6 +441,12 @@ a:hover {
   #home-container .top span:first-child {
     margin-right: 0px;
   }
+
+  #home-container .bottom {
+    padding: 2rem;
+    font-size: 16px;
+  }
+
 
   #description-container {
     padding: 1.5rem;

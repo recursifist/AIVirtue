@@ -145,7 +145,7 @@ const createText = (data, textGroup, textItems) => { // hack: ugly non-async pat
         const nameMesh = new THREE.Mesh(nameGeometry, material)
         nameGeometry.computeBoundingBox()
         nameMesh.position.x = -nameGeometry.boundingBox.max.x / 2
-        nameMesh.position.z = 0.015
+        nameMesh.position.z = 0.03
         itemGroup.nameMesh = nameMesh
         itemGroup.add(nameMesh)
 
@@ -383,6 +383,7 @@ const createScene = async (htmlContainerId, jsonFileName, modelFileName) => {
     setTimeout(() => {
       container.classList.remove('invisible')
       container.classList.add('fadeIn')
+      container.click()
     }, 1000)
   })
 }

@@ -25,14 +25,6 @@ onReady(async () => {
   const searchBox = document.getElementById("searchbox")
   const searchCloseButton = searchContainer.getElementsByClassName("close-button")[0]
 
-  let firstVisit = true
-  const countVisit = () => {
-    if (firstVisit) { 
-      //fetch('')
-      firstVisit = false
-    }
-  }
-
   const hideAllViews = () => {
     homeContainer.classList.add("hidden")
     sceneContainer.classList.add("hidden")
@@ -48,7 +40,6 @@ onReady(async () => {
       contentContainer.classList.remove("hidden")
     }
     window.dispatchEvent(new Event('resize'))
-    countVisit()
   }
 
   goToWall.addEventListener('click', () => {
